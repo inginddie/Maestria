@@ -1,0 +1,142 @@
+Quiero el siguiente desarrollo.
+
+- DEBE ser en lenguaje python
+
+📌 INPUT:
+- Deberá pedir el archivo para analizar tipo .csv
+- Los campos en el archivo csv deberán ser los siguientes:
+
+a. Clave de incidencia
+b. Nombre del proyecto
+c. Resumen
+d. Descripción
+e. Tipo de issue
+f. Principal
+g. Story Point
+h. Creada
+i.  Paso a Done
+
+Paso 1.
+
+Genere una columna en el archivo a cada check de evaluación
+
+📌 CHECKLIST DE EVALUACIÓN (100%)
+
+j.📌 10% | Título descriptivo: El título refleja claramente el objetivo o funcionalidad.
+k. 📌 10% | Claridad y consistencia en la descripción: La historia es clara, concisa y fácil de entender.
+l. 📌 10% | Estándar Just in Time (JIT): La historia está alineada con el estándar de flujo de trabajo JIT.[siempre cumple]
+m. 📌 20% | Uso de Gherkin: Los criterios de aceptación están correctamente estructurados en formato Given/When/Then.
+n. 📌 10% | Criterios de aceptación SMART: Son específicos, medibles, alcanzables, relevantes y con tiempo definido.
+o. 📌 10% | Segmentación INVEST: La historia es independiente, negociable, valiosa, estimable, pequeña y testeable.
+p. 📌 5% | Revisión colaborativa: Ha sido revisada con todas las partes interesadas.
+q. 📌 10% | Seguimiento y ajustes: Se ha revisado y ajustado en base a retroalimentación.
+r. 📌 5% | Prioridad y valor: La historia está priorizada según el impacto en el negocio.
+s. 📌 5% | Documentación adecuada: Incluye toda la documentación necesaria.
+t. 📌 5% | Uso de plantilla estándar: Sigue el formato "Como [rol], quiero [funcionalidad], para [beneficio]".
+
+Paso 2.
+el código deberá recorrer y encontrara cada Issue tipo (columna e) e identificar que sean "Historia" o "Historia no funcional ( habilitadora)" a estas le debe analizar los siguientes puntos del checklist de evaluación:
+j. 📌 10% | Título descriptivo: El título refleja claramente el objetivo o funcionalidad. campo "Resumen"
+k. 📌 10% | Claridad y consistencia en la descripción: La historia es clara, concisa y fácil de entender. "comparación entre los campos Resumen y descripción"
+o. 📌 10% | Segmentación INVEST: La historia es independiente, negociable, valiosa, estimable, pequeña y testeable. " campo descripción"
+t. 📌 5% | Uso de plantilla estándar: Sigue el formato "Como [rol], quiero [funcionalidad], para [beneficio]".
+
+a cada issue debera hacerle este analisis y colocarle el % de evaluación a los que le acabo de anotar.
+
+Paso 3.
+en este paso buscara las issue llamados "criterios de aceptación" y evaluara lo siguiente de cada uno
+m. 📌 20% | Uso de Gherkin: Los criterios de aceptación están correctamente estructurados en formato Given/When/Then. " del campo descripción"
+n. 📌 10% | Criterios de aceptación SMART: Son específicos, medibles, alcanzables, relevantes y con tiempo definido.
+
+a cada issue deberá hacerle este análisis y colocarle el % de evaluación a los que le acabo de anotar.
+
+Paso 4.
+cada issue "criterio de aceptación " tendrá un "campo "principal" que será la Clave de incidencia (campo Clave de incidencia), para identificarlo a una issue ("Historia" o "Historia no funcional ( habilitadora)").
+
+el codigo debera analizar los resultados de los criterios de aceptación de cada historia y no funcional y los ponderara para incluir en la calificación de evaluación, ejemplo:
+
+HU 1
+CA 1 
+📌 20% | Uso de Gherkin: 10% resultado
+📌 10% | Criterios de aceptación SMART: 10% resultado
+CA 2 
+📌 20% | Uso de Gherkin: 20% resultado
+📌 10% | Criterios de aceptación SMART: 0% resultado
+Ponderado CA de la HU 1
+📌 20% | Uso de Gherkin: 15% resultado
+📌 10% | Criterios de aceptación SMART: 5% resultado
+
+al final deberá colocar el resultado del ponderado de los criterios evaluados en el paso 2
+
+
+Paso 5.
+debes generar una ultima colulma con la suma de los % del resultado de cada item del checklist, ejemplo:
+
+j.📌 10% | Título descriptivo: El título refleja claramente el objetivo o funcionalidad.
+k. 📌 10% | Claridad y consistencia en la descripción: La historia es clara, concisa y fácil de entender.
+l. 📌 10% | Estándar Just in Time (JIT): La historia está alineada con el estándar de flujo de trabajo JIT.[siempre cumple]
+m. 📌 20% | Uso de Gherkin: Los criterios de aceptación están correctamente estructurados en formato Given/When/Then.
+n. 📌 10% | Criterios de aceptación SMART: Son específicos, medibles, alcanzables, relevantes y con tiempo definido.
+o. 📌 10% | Segmentación INVEST: La historia es independiente, negociable, valiosa, estimable, pequeña y testeable.
+p. 📌 5% | Revisión colaborativa: Ha sido revisada con todas las partes interesadas.[siempre cumple]
+q. 📌 10% | Seguimiento y ajustes: Se ha revisado y ajustado en base a retroalimentación.[siempre cumple]
+r. 📌 5% | Prioridad y valor: La historia está priorizada según el impacto en el negocio.[siempre cumple]
+s. 📌 5% | Documentación adecuada: Incluye toda la documentación necesaria.[siempre cumple]
+t. 📌 5% | Uso de plantilla estándar: Sigue el formato "Como [rol], quiero [funcionalidad], para [beneficio]".
+**v. Suma de los % de cada item del checklist
+
+
+Paso 6.
+Genera un informe por Nombre del proyecto utilizando el campo " Nombre del proyecto " donde ponderes todas las issues (historias y historias no funcionales (habilitadoras)) pertenecientes al Nombre del proyecto evaluado
+debera ser un archivo .txt con el siguiente formato:
+
+Nombre del proyecto: [nombre del Nombre del proyecto]
+Total de historias de usuario: [total de historia]
+Total de historias no funcionales (habilitadoras): [total de historias no funcionales (habilitadoras)]
+Promedio de evaluación de historias de usuario: [promedio de evaluación de historias de usuario]
+Promedio de evaluación de historias no funcionales (habilitadoras): [promedio de evaluación de historias no funcionales (habilitadoras)]
+Promedio de evaluación total: [promedio de evaluación total]
+Analisis LLM temas positivos
+Analisis LLM temas por mejorar ( tomar casos puntuales como ejemplo)
+
+Paso 7.
+Generar un archivo .csv con el resultado de la evaluación de cada issue, con las columnas:
+a. Clave de incidencia
+b. Nombre del proyecto
+c. Resumen
+d. Descripción
+e. Tipo de issue
+f. Principal
+g. Story Point
+h. Creada
+i.  Paso a Done
+j.📌 10% | Título descriptivo: El título refleja claramente el objetivo o funcionalidad.
+k. 📌 10% | Claridad y consistencia en la descripción: La historia es clara, concisa y fácil de entender.
+l. 📌 10% | Estándar Just in Time (JIT): La historia está alineada con el estándar de flujo de trabajo JIT.[siempre cumple]
+m. 📌 20% | Uso de Gherkin: Los criterios de aceptación están correctamente estructurados en formato Given/When/Then.
+n. 📌 10% | Criterios de aceptación SMART: Son específicos, medibles, alcanzables, relevantes y con tiempo definido.
+o. 📌 10% | Segmentación INVEST: La historia es independiente, negociable, valiosa, estimable, pequeña y testeable.
+p. 📌 5% | Revisión colaborativa: Ha sido revisada con todas las partes interesadas.[siempre cumple]
+q. 📌 10% | Seguimiento y ajustes: Se ha revisado y ajustado en base a retroalimentación.[siempre cumple]
+r. 📌 5% | Prioridad y valor: La historia está priorizada según el impacto en el negocio.[siempre cumple]
+s. 📌 5% | Documentación adecuada: Incluye toda la documentación necesaria.[siempre cumple]
+t. 📌 5% | Uso de plantilla estándar: Sigue el formato "Como [rol], quiero [funcionalidad], para [beneficio]".
+v. Suma de los % de cada item del checklist
+
+Paso 8.
+Generar un archivo .csv con el resultado de la evaluación de cada Nombre del proyecto, con las columnas:
+a. Nombre del proyecto
+b. Total de historias de usuario
+c. Total de historias no funcionales (habilitadoras)
+d. Promedio de evaluación de historias de usuario
+e. Promedio de evaluación de historias no funcionales (habilitadoras)
+f. Promedio de evaluación total
+g. Analisis LLM temas positivos
+h. Analisis LLM temas por mejorar ( tomar casos puntuales como ejemplo)
+
+
+
+
+
+
+ 

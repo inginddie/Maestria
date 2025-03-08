@@ -1,0 +1,14 @@
+def clean_data(migracion):
+    # Drop the column 'Estimación original'
+    migracion = migracion.drop(columns=['Estimación original'])
+    # Remove columns with NULL or low value data
+    migracion = migracion.dropna(axis=1, how='all')
+    # Remove columns with less than 10% data
+    threshold = len(migracion) * 0.1
+    migracion = migracion.dropna(thresh=threshold, axis=1)
+    # Remove column 'Campo personalizado (unidad agil)'
+    migracion = migracion.drop(columns=['Campo personalizado (UNIDAD AGIL)'])
+    return migracion
+
+migracion_clean = clean_data(migracion.copy())
+migracion_clean.head()

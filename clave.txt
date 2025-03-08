@@ -1,0 +1,652 @@
+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
+setx OPENAI_API_KEY "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"
+
+import csv
+import re
+import statistics
+import os
+from collections import defaultdict
+import openai
+
+# Configuración de la clave API de OpenAI (usa variables de entorno para mayor seguridad)
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key or not api_key.startswith("sk-"):
+    raise ValueError(
+        "Error: La clave API de OpenAI no está configurada correctamente. "
+        "Verifica tu variable de entorno OPENAI_API_KEY."
+    )
+print(f"API Key usada: {api_key[:5]}... (oculta por seguridad)")
+
+client = openai.OpenAI(api_key=api_key) if hasattr(openai, 'OpenAI') else openai.Client(api_key=api_key)
+
+# Prueba rápida para verificar si la API Key es válida
+try:
+    client.models.list()
+    print("✅ Conexión exitosa con OpenAI API")
+except openai.AuthenticationError:
+    raise ValueError(
+        "❌ Error: La clave API de OpenAI es incorrecta o ha sido revocada. "
+        "Genera una nueva en https://platform.openai.com/account/api-keys"
+    )
+except Exception as e:
+    print(f"⚠️ Advertencia: No se pudo validar la API Key. Error: {e}")
+
+# Palabras clave para INVEST
+INVEST_KEYWORDS = ["independiente", "negociable", "valiosa", "estimable", "pequeña", "testeable"]
+
+# Palabras clave para SMART (para referencia, aunque ahora usaremos prompt)
+SMART_KEYWORDS = ["específic", "medible", "alcanzabl", "relevant", "tiempo"]
+
+# Caché para resultados de análisis de OpenAI
+cache_analisis = {}
+
+########################################################
+# FUNCIONES PRINCIPALES DE ANÁLISIS CON OPENAI
+########################################################
+
+def normalizar_tipo_incidencia(tipo_original):
+    """
+    Normaliza el tipo de incidencia (historia, historia no funcional, criterios de aceptación, etc.)
+    """
+    if not tipo_original:
+        return ""
+
+    tipo_limpio = re.sub(r"\s+", " ", tipo_original.strip().lower())
+
+    tipo_mapped = {
+        "historia": "historia",
+        "historia de usuario": "historia",
+        "hu": "historia",
+        "historia no funcional": "historia no funcional",
+        "historia no funcional ( habilitadora)": "historia no funcional",
+        "historia no funcional (habilitadora)": "historia no funcional",
+        "historia no funcional (habilitadora )": "historia no funcional",
+        "historia no funcional ( habilitadora )": "historia no funcional",
+        "hnf": "historia no funcional",
+        "criterios de aceptación": "criterios de aceptación",
+        "criterio de aceptación": "criterios de aceptación",
+        "ca": "criterios de aceptación",
+    }
+
+    if tipo_limpio in tipo_mapped:
+        return tipo_mapped[tipo_limpio]
+    if re.search(r"historia\s+no\s+funcional", tipo_limpio):
+        return "historia no funcional"
+    if re.search(r"historia(\s+de\s+usuario)?$", tipo_limpio):
+        return "historia"
+    if re.search(r"criterios?\s+de\s+aceptaci[oó]n", tipo_limpio):
+        return "criterios de aceptación"
+    return ""
+
+def analizar_gherkin_con_openai(texto: str) -> bool:
+    """
+    Verifica si un texto (la descripción o resumen) sigue la estructura Gherkin 
+    en inglés (Given/When/Then) o en español (Dado/Cuando/Entonces), 
+    usando la API de OpenAI.
+    """
+    if texto in cache_analisis:
+        return cache_analisis[texto]
+
+    prompt = (
+        "Evalúa si el siguiente texto está en formato Gherkin (Given/When/Then) o (Dado/Cuando/Entonces). "
+        "Responde con 'sí' si lo cumple, o 'no' si no lo cumple.\n\n"
+        f"Texto: {texto}"
+    )
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=50,
+        )
+        respuesta = response.choices[0].message.content.strip().lower()
+        resultado = (respuesta == "sí")
+        cache_analisis[texto] = resultado
+        return resultado
+    except Exception as e:
+        print(f"Error al analizar con OpenAI: {e}")
+        return False
+
+def analizar_claridad_consistencia(resumen: str, descripcion: str) -> bool:
+    """
+    Analiza si la historia es clara y consistente (historia de usuario) mediante un prompt.
+    """
+    clave_cache = f"claridad_{hash(resumen)}_{hash(descripcion)}"
+    if clave_cache in cache_analisis:
+        return cache_analisis[clave_cache]
+
+    if not descripcion or len(descripcion.strip()) < 10:
+        return False
+
+    prompt = f"""
+    Analiza si la siguiente historia de usuario es clara, concisa y fácil de entender.
+
+    Resumen/Título: {resumen}
+
+    Descripción: {descripcion}
+
+    Una historia clara y consistente debe:
+    1. Ser fácil de entender para cualquier miembro del equipo
+    2. Evitar ambigüedades y jerga innecesaria
+    3. Tener una descripción que expanda y sea consistente con el resumen/título
+    4. Expresar claramente qué se necesita y por qué
+
+    Responde solo 'sí' si la historia es clara y consistente, o 'no' si no lo es.
+    """
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=50,
+        )
+        respuesta = response.choices[0].message.content.strip().lower()
+        resultado = (respuesta in ["sí", "si"])
+        cache_analisis[clave_cache] = resultado
+        return resultado
+    except Exception as e:
+        print(f"Error al analizar claridad con OpenAI: {e}")
+        return False
+
+def analizar_invest_con_openai(descripcion: str) -> bool:
+    """
+    Analiza si la descripción de la historia cumple con los criterios INVEST
+    """
+    if not descripcion or len(descripcion.strip()) < 10:
+        return False
+
+    clave_cache = f"invest_{hash(descripcion)}"
+    if clave_cache in cache_analisis:
+        return cache_analisis[clave_cache]
+
+    prompt = f"""
+    El siguiente texto es la descripción de una historia de usuario. ¿Cumple con los criterios INVEST
+    (independiente, negociable, valiosa, estimable, pequeña, testeable)? Responde solo 'sí' o 'no'.
+
+    Texto: {descripcion}
+    """
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=50,
+        )
+        respuesta = response.choices[0].message.content.strip().lower()
+        resultado = ("sí" in respuesta or "si" in respuesta)
+        cache_analisis[clave_cache] = resultado
+        return resultado
+    except Exception as e:
+        print(f"Error al analizar INVEST con OpenAI: {e}")
+        return False
+
+def analizar_titulo_descriptivo_con_openai(resumen: str, descripcion: str) -> bool:
+    """
+    Analiza si el título (resumen) es descriptivo y correlaciona con la descripción.
+    """
+    if not resumen or not descripcion:
+        return False
+
+    clave_cache = f"titulo_descriptivo_{hash(resumen)}_{hash(descripcion)}"
+    if clave_cache in cache_analisis:
+        return cache_analisis[clave_cache]
+
+    prompt = f"""
+    Evalúa si el siguiente título describe claramente el objetivo o funcionalidad,
+    y está correlacionado con la descripción.
+
+    Título: {resumen}
+    Descripción: {descripcion}
+
+    Responde solo 'sí' si el título es claro y se relaciona bien con la descripción,
+    o 'no' si no.
+    """
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=50,
+        )
+        respuesta = response.choices[0].message.content.strip().lower()
+        resultado = ("sí" in respuesta or "si" in respuesta)
+        cache_analisis[clave_cache] = resultado
+        return resultado
+    except Exception as e:
+        print(f"Error al analizar título descriptivo con OpenAI: {e}")
+        return False
+
+########################################################
+# NUEVA FUNCIÓN: ANALIZAR CRITERIOS SMART EN EL CAMPO RESUMEN DEL CRITERIO DE ACEPTACIÓN
+########################################################
+def analizar_smart_en_resumen_ca(resumen_ca: str) -> bool:
+    """
+    Analiza si el "Resumen" de un Criterio de Aceptación cumple con las características SMART.
+    (Específico, Medible, Alcanzable, Relevante y con Tiempo definido)
+
+    Retorna True si es SMART, False en caso contrario.
+    """
+    if not resumen_ca or len(resumen_ca.strip()) < 5:
+        return False
+
+    clave_cache = f"smart_ca_{hash(resumen_ca)}"
+    if clave_cache in cache_analisis:
+        return cache_analisis[clave_cache]
+
+    prompt = f"""
+    Este es el resumen de un Criterio de Aceptación. Verifica si es un criterio SMART:
+    - Específico
+    - Medible
+    - Alcanzable
+    - Relevante
+    - Tiempo definido
+
+    Resumen del Criterio de Aceptación: \"\"\"{resumen_ca}\"\"\"
+
+    Responde solo 'sí' si el resumen es SMART, o 'no' en caso contrario.
+    """
+
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=50,
+        )
+        respuesta = response.choices[0].message.content.strip().lower()
+        resultado = ("sí" in respuesta or "si" in respuesta)
+        cache_analisis[clave_cache] = resultado
+        return resultado
+    except Exception as e:
+        print(f"Error al analizar SMART en Resumen CA con OpenAI: {e}")
+        return False
+
+########################################################
+# EVALUACIÓN DE HISTORIAS Y CA
+########################################################
+
+def evaluar_hu_hnf(resumen: str, descripcion: str, tipo: str) -> dict:
+    """
+    Evalúa criterios de Historias de Usuario (HU) y de Historias No Funcionales (HNF).
+    """
+    resultado = {"j": 0.0, "k": 0.0, "o": 0.0, "t": 0.0}
+
+    # j -> Título descriptivo (10%)
+    if tipo in ["historia", "historia no funcional"]:
+        if analizar_titulo_descriptivo_con_openai(resumen, descripcion):
+            resultado["j"] = 10.0
+
+    # k -> Claridad y consistencia (10%)
+    if analizar_claridad_consistencia(resumen, descripcion):
+        resultado["k"] = 10.0
+
+    # o -> Segmentación INVEST (10%)
+    if tipo in ["historia", "historia no funcional"]:
+        if analizar_invest_con_openai(descripcion):
+            resultado["o"] = 10.0
+
+    # t -> Uso de plantilla estándar (5%)
+    pattern_plantilla = r"como\s+\w+.+?\s+,?\s*quiero\s+\w+.+?\s+,?\s*para\s+\w+.+?"
+    if re.search(pattern_plantilla, (descripcion or "").lower()):
+        resultado["t"] = 5.0
+
+    return resultado
+
+
+def evaluar_criterios_aceptacion(resumen_ca: str, descripcion_padre: str = None) -> dict:
+    """
+    Evalúa Criterios de Aceptación (CA):
+      - m (20%): Uso de Gherkin en el campo 'Resumen' del CA (puede estar en inglés o español)
+      - n (10%): Criterios SMART (si ya lo tienes implementado)
+    """
+    resultado = {}
+
+    # m: Uso de Gherkin (20%) => Lo evaluamos con el "Resumen" del CA
+    if analizar_gherkin_con_openai(resumen_ca):
+        resultado["m"] = 20.0
+    else:
+        resultado["m"] = 0.0
+
+    # n: Criterios SMART (10%) => aplicamos la lógica sobre el RESUMEN del CA
+    if analizar_smart_en_resumen_ca(resumen_ca):
+        resultado["n"] = 10.0
+    else:
+        resultado["n"] = 0.0
+
+    return resultado
+
+
+########################################################
+# ANÁLISIS POR PROYECTO, INFERIR TIPO, MAIN, ETC.
+########################################################
+
+def analizar_proyecto(data: dict) -> tuple:
+    eval_hu = data.get("eval_hu", [])
+    eval_hnf = data.get("eval_hnf", [])
+    all_evals = eval_hu + eval_hnf
+
+    if not all_evals:
+        return ("Sin datos suficientes.", "Sin datos suficientes.")
+
+    criterios = defaultdict(list)
+    for issue in data["detalles_issues"]:
+        for crit in ["j", "k", "m", "n", "o", "t"]:
+            criterios[crit].append(issue.get(crit, 0.0))
+
+    promedios = {k: sum(v)/len(v) if v else 0.0 for k, v in criterios.items()}
+
+    # Identificar fortalezas y debilidades
+    fortalezas = sorted(promedios.items(), key=lambda x: x[1], reverse=True)[:2]
+    debilidades = sorted(promedios.items(), key=lambda x: x[1])[:2]
+
+    mensajes_positivos = []
+    for crit, score in fortalezas:
+        if crit == "j" and score > 7:
+            mensajes_positivos.append("títulos descriptivos y concisos")
+        elif crit == "k" and score > 7:
+            mensajes_positivos.append("consistencia entre resumen y descripción")
+        elif crit == "m" and score > 14:
+            mensajes_positivos.append("uso de Gherkin y coherencia en criterios de aceptación")
+        elif crit == "n" and score > 7:
+            mensajes_positivos.append("criterios de aceptación SMART")
+        elif crit == "o" and score > 7:
+            mensajes_positivos.append("uso de principios INVEST")
+        elif crit == "t" and score > 3:
+            mensajes_positivos.append("uso de la plantilla estándar")
+
+    mensajes_mejoras = []
+    for crit, score in debilidades:
+        if crit == "j" and score < 5:
+            mensajes_mejoras.append("mejorar los títulos para que sean más descriptivos")
+        elif crit == "k" and score < 5:
+            mensajes_mejoras.append("aumentar la consistencia entre resumen y descripción")
+        elif crit == "m" and score < 10:
+            mensajes_mejoras.append("reforzar el uso de Gherkin y la coherencia en criterios de aceptación")
+        elif crit == "n" and score < 5:
+            mensajes_mejoras.append("definir criterios de aceptación más SMART")
+        elif crit == "o" and score < 5:
+            mensajes_mejoras.append("mejorar la segmentación según INVEST")
+        elif crit == "t" and score < 2.5:
+            mensajes_mejoras.append("usar la plantilla estándar adecuadamente")
+
+    positivo = (
+        "El proyecto destaca en " + " y ".join(mensajes_positivos) + "."
+        if mensajes_positivos
+        else "Sin fortalezas destacadas."
+    )
+    mejora = (
+        "Se recomienda " + " y ".join(mensajes_mejoras) + "."
+        if mensajes_mejoras
+        else "Sin áreas de mejora identificadas."
+    )
+
+    return (positivo, mejora)
+
+
+def inferir_tipo_incidencia(descripcion: str, principal: str) -> str:
+    if principal:
+        return "criterios de aceptación"
+    if re.search(r"como\s+\w+.+?\s+,?\s*quiero\s+\w+.+?\s+,?\s*para\s+\w+.+?", (descripcion or "").lower()):
+        return "historia"
+    return "historia no funcional"
+
+def main():
+    ruta_csv = input("Ruta del CSV (Enter para predeterminado): ").strip("\"'") or "prueba Ai 1.csv"
+    if not os.path.exists(ruta_csv):
+        print(f"Error: Archivo no encontrado en {ruta_csv}")
+        return
+
+    codificaciones = ["utf-8", "ISO-8859-1", "Windows-1252"]
+    issues = None
+    for codificacion in codificaciones:
+        try:
+            with open(ruta_csv, mode="r", encoding=codificacion) as f:
+                reader = csv.DictReader(f)
+                issues = list(reader)
+            print(f"Archivo leído correctamente con codificación: {codificacion}")
+            break
+        except UnicodeDecodeError:
+            print(f"Error al leer con codificación {codificacion}")
+    else:
+        print("No se pudo leer el archivo con ninguna de las codificaciones probadas.")
+        return
+
+    if not issues:
+        print(f"Advertencia: El archivo {ruta_csv} no contiene datos o no se pudo leer correctamente.")
+        return
+
+    # Estructura para evaluaciones
+    evaluaciones = {}
+    for row in issues:
+        clave = row.get("Clave de incidencia", "").strip()
+        if not clave:
+            continue
+        evaluaciones[clave] = {
+            "j": 0.0,  # Título descriptivo
+            "k": 0.0,  # Claridad y consistencia
+            "l": 10.0, # Estándar JIT
+            "m": 0.0,  # Uso de Gherkin
+            "n": 0.0,  # Criterios SMART
+            "o": 0.0,  # Segmentación INVEST
+            "p": 5.0,  # Revisión colaborativa
+            "q": 10.0, # Seguimiento y ajustes
+            "r": 5.0,  # Prioridad y valor
+            "s": 5.0,  # Documentación
+            "t": 0.0,  # Plantilla estándar
+            "v": 0.0,  # Suma final
+        }
+
+    descripciones_historias = {}
+    tipos_issues = {}
+
+    # Determinar tipos
+    for row in issues:
+        clave = row.get("Clave de incidencia", "").strip()
+        if not clave:
+            continue
+        tipo_original = row.get("Tipo de Incidencia", "").strip()
+        tipo_norm = normalizar_tipo_incidencia(tipo_original)
+        descripcion = row.get("Descripción", "")
+        principal = row.get("Principal", "").strip()
+        if not tipo_norm:
+            tipo_norm = inferir_tipo_incidencia(descripcion, principal)
+            print(f"Inferido tipo '{tipo_norm}' para {clave}")
+        tipos_issues[clave] = tipo_norm
+        # Guardar descripciones de HU/HNF
+        if tipo_norm in ["historia", "historia no funcional"]:
+            descripciones_historias[clave] = {
+                "descripcion": descripcion,
+                "tipo": tipo_norm,
+            }
+
+    # Evaluar
+    for row in issues:
+        clave = row.get("Clave de incidencia", "").strip()
+        if not clave:
+            continue
+        tipo_issue = tipos_issues.get(clave, "")
+        resumen = row.get("Resumen", "")
+        descripcion = row.get("Descripción", "")
+        principal = row.get("Principal", "").strip()
+
+        if tipo_issue in ["historia", "historia no funcional"]:
+            evaluaciones[clave].update(evaluar_hu_hnf(resumen, descripcion, tipo_issue))
+        elif tipo_issue == "criterios de aceptación":
+            # Nuevo: m se analiza con OpenAI sobre el RESUMEN del CA (Gherkin),
+            #        n se analiza con OpenAI sobre el RESUMEN del CA (SMART)
+            padre_info = None
+            if principal:
+                padre_info = descripciones_historias.get(principal)
+            # Pasamos el "Resumen" del CA para evaluar m y n
+            if padre_info:
+                eval_ca = evaluar_criterios_aceptacion(resumen, padre_info.get("descripcion", ""))
+                evaluaciones[clave].update(eval_ca)
+            else:
+                eval_ca = evaluar_criterios_aceptacion(resumen)
+                evaluaciones[clave].update(eval_ca)
+
+    # Ponderar CA en HU/HNF (similar a la lógica para promediar m, n en el padre)
+    principal_map = defaultdict(list)
+    for row in issues:
+        clave = row.get("Clave de incidencia", "").strip()
+        if not clave:
+            continue
+        tipo_issue = tipos_issues.get(clave, "")
+        principal = row.get("Principal", "").strip()
+        if tipo_issue == "criterios de aceptación" and principal in evaluaciones:
+            principal_map[principal].append({
+                "clave_ca": clave,
+                "eval": {
+                    "m": evaluaciones[clave].get("m", 0.0),
+                    "n": evaluaciones[clave].get("n", 0.0),
+                }
+            })
+
+    for hu_key, cas_list in principal_map.items():
+        if hu_key in evaluaciones:
+            # promediar m y n de sus CA
+            m_vals = [item["eval"]["m"] for item in cas_list]
+            n_vals = [item["eval"]["n"] for item in cas_list]
+            if m_vals:
+                evaluaciones[hu_key]["m"] = sum(m_vals)/len(m_vals)
+            if n_vals:
+                evaluaciones[hu_key]["n"] = sum(n_vals)/len(n_vals)
+
+    # Calcular v
+    for ckey, vals in evaluaciones.items():
+        vals["v"] = sum(vals[k] for k in ["j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t"])
+
+    # Agrupar por proyecto
+    proyectos_data = defaultdict(lambda: {"hu": [], "hnf": [], "eval_hu": [], "eval_hnf": [], "detalles_issues": []})
+    for row in issues:
+        clave = row.get("Clave de incidencia", "").strip()
+        if not clave or clave not in evaluaciones:
+            continue
+        proyecto = row.get("Nombre del proyecto", "") or "SIN_PROYECTO"
+        t = tipos_issues.get(clave, "")
+        score = evaluaciones[clave]["v"]
+        proyectos_data[proyecto]["detalles_issues"].append(evaluaciones[clave])
+        if t == "historia":
+            proyectos_data[proyecto]["hu"].append(clave)
+            proyectos_data[proyecto]["eval_hu"].append(score)
+        elif t == "historia no funcional":
+            proyectos_data[proyecto]["hnf"].append(clave)
+            proyectos_data[proyecto]["eval_hnf"].append(score)
+
+    # Crear directorio de salida
+    output_dir = "resultados_evaluacion"
+    os.makedirs(output_dir, exist_ok=True)
+
+    # informe_proyectos.txt
+    with open(os.path.join(output_dir, "informe_proyectos.txt"), "w", encoding="utf-8") as f_txt:
+        for proyecto, data in proyectos_data.items():
+            total_hu = len(data["hu"])
+            total_hnf = len(data["hnf"])
+            prom_hu = statistics.mean(data["eval_hu"]) if data["eval_hu"] else 0.0
+            prom_hnf = statistics.mean(data["eval_hnf"]) if data["eval_hnf"] else 0.0
+            all_scores = data["eval_hu"] + data["eval_hnf"]
+            prom_total = statistics.mean(all_scores) if all_scores else 0.0
+            analisis_positivo, analisis_mejorar = analizar_proyecto(data)
+
+            f_txt.write(f"Nombre del proyecto: {proyecto}\n")
+            f_txt.write(f"Total de historias de usuario: {total_hu}\n")
+            f_txt.write(f"Total de historias no funcionales (habilitadoras): {total_hnf}\n")
+            f_txt.write(f"Promedio de evaluación de historias de usuario: {round(prom_hu, 2)}\n")
+            f_txt.write(f"Promedio de evaluación de historias no funcionales (habilitadoras): {round(prom_hnf, 2)}\n")
+            f_txt.write(f"Promedio de evaluación total: {round(prom_total, 2)}\n")
+            f_txt.write(f"Análisis LLM temas positivos: {analisis_positivo}\n")
+            f_txt.write(f"Análisis LLM temas por mejorar: {analisis_mejorar}\n")
+            f_txt.write("\n---------------------------------------------------------\n\n")
+
+    # evaluacion_issues.csv
+    columnas_issues = [
+        "Clave de incidencia",
+        "Nombre del proyecto",
+        "Resumen",
+        "Descripción",
+        "Tipo de Incidencia",
+        "Principal",
+        "Story Point",
+        "Creada",
+        "Paso a Done",
+        "j.10% Título descriptivo",
+        "k.10% Claridad y consistencia",
+        "l.10% Estándar JIT",
+        "m.20% Uso de Gherkin",
+        "n.10% Criterios SMART",
+        "o.10% Segmentación INVEST",
+        "p.5% Revisión colaborativa",
+        "q.10% Seguimiento y ajustes",
+        "r.5% Prioridad y valor",
+        "s.5% Documentación adecuada",
+        "t.5% Uso de plantilla estándar",
+        "v. Suma de checklist",
+        "Tipo Normalizado",
+    ]
+    with open(os.path.join(output_dir, "evaluacion_issues.csv"), "w", encoding="utf-8", newline="") as f_out:
+        writer = csv.writer(f_out)
+        writer.writerow(columnas_issues)
+        for row in issues:
+            clave = row.get("Clave de incidencia", "").strip()
+            if not clave or clave not in evaluaciones:
+                continue
+            vals = evaluaciones[clave]
+            tipo_norm = tipos_issues.get(clave, "")
+            writer.writerow([
+                row.get("Clave de incidencia", ""),
+                row.get("Nombre del proyecto", ""),
+                row.get("Resumen", ""),
+                row.get("Descripción", ""),
+                row.get("Tipo de Incidencia", ""),
+                row.get("Principal", ""),
+                row.get("Story Point", ""),
+                row.get("Creada", ""),
+                row.get("Paso a Done", ""),
+                round(vals["j"], 2),
+                round(vals["k"], 2),
+                round(vals["l"], 2),
+                round(vals["m"], 2),
+                round(vals["n"], 2),
+                round(vals["o"], 2),
+                round(vals["p"], 2),
+                round(vals["q"], 2),
+                round(vals["r"], 2),
+                round(vals["s"], 2),
+                round(vals["t"], 2),
+                round(vals["v"], 2),
+                tipo_norm,
+            ])
+
+    # evaluacion_proyectos.csv
+    columnas_proyectos = [
+        "Nombre del proyecto",
+        "Total de historias de usuario",
+        "Total de historias no funcionales (habilitadoras)",
+        "Promedio de evaluación de historias de usuario",
+        "Promedio de evaluación de historias no funcionales (habilitadoras)",
+        "Promedio de evaluación total",
+        "Análisis LLM temas positivos",
+        "Análisis LLM temas por mejorar",
+    ]
+    with open(os.path.join(output_dir, "evaluacion_proyectos.csv"), "w", encoding="utf-8", newline="") as f_proj:
+        writer = csv.writer(f_proj)
+        writer.writerow(columnas_proyectos)
+        for proyecto, data in proyectos_data.items():
+            total_hu = len(data["hu"])
+            total_hnf = len(data["hnf"])
+            prom_hu = statistics.mean(data["eval_hu"]) if data["eval_hu"] else 0.0
+            prom_hnf = statistics.mean(data["eval_hnf"]) if data["eval_hnf"] else 0.0
+            all_scores = data["eval_hu"] + data["eval_hnf"]
+            prom_total = statistics.mean(all_scores) if all_scores else 0.0
+            analisis_positivo, analisis_mejorar = analizar_proyecto(data)
+            writer.writerow([
+                proyecto,
+                total_hu,
+                total_hnf,
+                round(prom_hu, 2),
+                round(prom_hnf, 2),
+                round(prom_total, 2),
+                analisis_positivo,
+                analisis_mejorar,
+            ])
+
+    print("Archivos generados en 'resultados_evaluacion'.")
+
+
+if __name__ == "__main__":
+    main()

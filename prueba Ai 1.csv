@@ -1,0 +1,820 @@
+Clave de incidencia,Nombre del proyecto,Tipo de proyecto,Resumen,Descripción,Tipo de Incidencia,Principal,Parent summary,Story Points,Creada,Paso a Done
+1174761,Tribu API Canales y transaccional producto,software,Dado que: Necesito la creación de un nuevo puerto Cuando: Se realiza validación de CVV y Pin a travÃ©s de los canales digitales Entonces: Espero que se separen las implementaciones a partir de este nuevo puerto,,Criterio de aceptación,1150940,Configuración nuevo puerto para validación CVV y Pin,,05/03/2025 00:03,
+1174760,Tribu API Canales y transaccional producto,software,Dado que: Necesito la creación de un nuevo puerto Cuando: Se realiza validación de CVV y Pin a travÃ©s de los canales digitales Entonces: Espero que el nuevo puerto sea configurado,,Criterio de aceptación,1150940,Configuración nuevo puerto para validación CVV y Pin,,05/03/2025 00:02,
+1171207,Tribu API Canales y transaccional producto,software,Que los registros dentro de cada archivo queden unificados y organizados por fecha,,Criterio de aceptación,1141130,148 - Cambio de clave - Cajeros - Desarrollo de unificacion y ordenamiento (4 Archivos Novedades),,03/03/2025 14:00,
+1171205,Tribu API Canales y transaccional producto,software,"Que cada archivo quede nombrado con la fecha en formato aÃ±o, mes dÃ­a como sufijo, antes de la extensión",,Criterio de aceptación,1141130,148 - Cambio de clave - Cajeros - Desarrollo de unificacion y ordenamiento (4 Archivos Novedades),,03/03/2025 13:59,
+1171203,Tribu API Canales y transaccional producto,software,"Que se permita generar los 4 archivos: Novedades, bloqueo, activación y activación cafetera",,Criterio de aceptación,1141130,148 - Cambio de clave - Cajeros - Desarrollo de unificacion y ordenamiento (4 Archivos Novedades),,03/03/2025 13:49,
+1169715,Tribu API Canales y transaccional producto,software,"Dado que: se necesita verificar la malla RECCB, Cuando se genere el archivo  No deben existir trxs realizadas en el Canal  interno M.E. (Medios Electronicos) entonces se deben informar porque estas trxs se deben reportar en el archivo RECME",,Criterio de aceptación,1090015,Implementación validar archivo RECCB este completo ,,28/02/2025 15:14,03/03/2025 18:15
+1169714,Tribu API Canales y transaccional producto,software,"Dado que: se necesita verificar la malla RECCB, Cuando se genere el archivo con las trxs realizadas en el Canal  C. B. entonces se deben identificar que las trxs  Cara Debito No bajen al archivo RECCB",,Criterio de aceptación,1090015,Implementación validar archivo RECCB este completo ,,28/02/2025 15:14,03/03/2025 18:15
+1169713,Tribu API Canales y transaccional producto,software,"Dado que: se necesita verificar la malla RECCB, Cuando se genere el archivo con las trxs realizadas en el Canal  C. B. entonces se deben identificar que las trxs  Cara CrÃ©dito bajen al archivo RECCB",,Criterio de aceptación,1090015,Implementación validar archivo RECCB este completo ,,28/02/2025 15:14,03/03/2025 18:15
+1168922,Tribu API Canales y transaccional producto,software,Que se realice la comparación adecuadamente con el archivo generado,"Dado que: Necesito que se genere y transmita el archivo RECCB de forma consistente
+Cuando: Se realiza el envÃ­o del archivo hacia liquidador
+Entonces: Espero que se realice la comparación adecuadamente con el archivo generado",Criterio de aceptación,1090015,Implementación validar archivo RECCB este completo ,,27/02/2025 22:48,
+1168921,Tribu API Canales y transaccional producto,software,Que exista jar que realiza el conteo de registros en la vista que genera el archivo RECCB,"Dado que: Necesito que se genere y transmita el archivo RECCB de forma consistente
+
+Cuando: Se realiza el envÃ­o del archivo hacia liquidador
+
+Entonces: Espero que exista un Jar que realice el conteo de registros en la vista que genera el archivo RECCB",Criterio de aceptación,1090015,Implementación validar archivo RECCB este completo ,,27/02/2025 22:45,
+1168920,Tribu API Canales y transaccional producto,software,Dado que necesito enviar archivos al emisor de TC Cuando: Se debe realizar el cargue en postcard Entonces: Espero que queden los archivos en la ruta esperada para realizar el respectivo cargue,,Criterio de aceptación,1168918,HU[H] - Ajuste malla transmisión archivos para Emisor TC,,27/02/2025 22:30,
+1168919,Tribu API Canales y transaccional producto,software,Dado que necesito enviar archivos al emisor de TC Cuando: Se debe realizar el cargue en postcard Entonces: Espero que se envÃ­en los 13 archivos al servidor de Portal en una ruta diferente a la de refresco TD,,Criterio de aceptación,1168918,HU[H] - Ajuste malla transmisión archivos para Emisor TC,,27/02/2025 22:30,
+1168801,Capa de Integración V2,software,"Dado que se consuma el API de  CustomerInformationManagement. Cuando se consuma el recurso de ""/V3/enterprise/customer/safe-data-PUT"" y no se enviÃ© X-NetWorkOwner. Entonces se debe obtener respuesta del backend",,Criterio de aceptación,1125937,AWS - API CustomerManagementv3 - safe-data Habilitción NetWorkOwner OPB001 o SMP,,27/02/2025 17:28,03/03/2025 13:07
+1168582,Tribu API Canales y transaccional producto,software,TX 429-529 - Cambio de filtro masificación -  Pago de convenios con Subconvenio,"Yo como Analista de Migración de Switch requiero que se modifique el filtro para que todas las transacciones de pago de convenios que tienen subconvenios que llegan desde los canales externos del banco (CB, ATM, AVALPAY, INTERNET AVAL) sean procesados por el switch Capa de integración con la finalidad que se cumpla con el plan de migración. ",Historia,1161783,Inamovible 305 Migración Switch TP - Canal Corresponsal Bancario,,27/02/2025 16:13,05/03/2025 21:58
+1167975,Tribu API Canales y transaccional producto,software,TX 162 - 262 Realizar desarrollo de las transacciones Consulta Titular TD/TC - Bus,"*Como usuario titular de una tarjeta de dÃ©bito o crÃ©dito, quiero poder consultar la titularidad de mi tarjeta en el sistema para asegurarme de que mis datos personales y de la tarjeta estÃ©n correctos y actualizados.*",Historia,1167950,162-262 Consulta Titular TD/TC - Bus,,27/02/2025 12:04,05/03/2025 21:57
+1166808,Tribu API Canales y transaccional producto,software,Dado que: se espera una alta concurrencia de transacciones con Tarjeta Credito cuando se ingresan por los distintos canales entonces se espera validar  los topes maximos y minimos de respuesta del servicio frente a la gran carga de stress recibida.,,Criterio de aceptación,1060318,161/261 - DIG482- Consulta Tarjeta TD/TC vs No. Documento - Pruebas de carga,,26/02/2025 15:54,04/03/2025 01:44
+1166807,Tribu API Canales y transaccional producto,software,Dado que: se espera una alta concurrencia de transacciones con Tarjeta Debito cuando se ingresan por los distintos canales entonces se espera validar  los topes maximos y minimos de respuesta del servicio frente a la gran carga de stress recibida.,,Criterio de aceptación,1060318,161/261 - DIG482- Consulta Tarjeta TD/TC vs No. Documento - Pruebas de carga,,26/02/2025 15:54,04/03/2025 01:44
+1166804,Tribu API Canales y transaccional producto,software,Dado que: se espera una alta concurrencia de transacciones con Tarjeta Credito cuando se ingresan por los distintos canales entonces se espera validar  los topes maximos y minimos de respuesta del servicio frente a la gran carga de stress recibida.,,Criterio de aceptación,1060344,161/261 - PB Consulta Tarjeta TD/TC vs No. Documento - Pruebas de carga,,26/02/2025 15:53,04/03/2025 01:44
+1166803,Tribu API Canales y transaccional producto,software,Dado que: se espera una alta concurrencia de transacciones con Tarjeta Debito cuando se ingresan por los distintos canales entonces se espera validar  los topes maximos y minimos de respuesta del servicio frente a la gran carga de stress recibida.,,Criterio de aceptación,1060344,161/261 - PB Consulta Tarjeta TD/TC vs No. Documento - Pruebas de carga,,26/02/2025 15:53,04/03/2025 01:44
+1166734,Tribu API Canales y transaccional producto,software,Dado que: si se realiza alguna modificaciÃ²n de la informaciÃ²n para la Tarjeta Credito cuando ingreso por los distintos canales entonces espero que sea rechazada la transacciÃ²n debido a que los datos no coinciden,,Criterio de aceptación,1136511,161/261 Consulta Tarjeta TD/TC vs No. Documento - Certificación Funcional,,26/02/2025 15:36,02/03/2025 23:13
+1166732,Tribu API Canales y transaccional producto,software,Dado que: se genera una transaccion con Tarjeta Credito cuando ingreso por los distintos canales entonces espero que llegue la mensajeria a la maquina de Postilion (Realtime) para la validaciÃ²n de la informaciÃ²n.,,Criterio de aceptación,1136511,161/261 Consulta Tarjeta TD/TC vs No. Documento - Certificación Funcional,,26/02/2025 15:36,02/03/2025 23:13
+1166731,Tribu API Canales y transaccional producto,software,Dado que: si se realiza alguna modificaciÃ²n de la informaciÃ²n para la Tarjeta Debito cuando ingreso por los distintos canales entonces espero que sea rechazada la transacciÃ²n debido a que los datos no coinciden,,Criterio de aceptación,1136511,161/261 Consulta Tarjeta TD/TC vs No. Documento - Certificación Funcional,,26/02/2025 15:36,02/03/2025 23:13
+1166730,Tribu API Canales y transaccional producto,software,Dado que: se genera una transaccion con Tarjeta Debito cuando ingreso por los distintos canales entonces espero que llegue la mensajeria a la maquina de Postilion (Realtime) para la validaciÃ²n de la informaciÃ²n.,,Criterio de aceptación,1136511,161/261 Consulta Tarjeta TD/TC vs No. Documento - Certificación Funcional,,26/02/2025 15:36,02/03/2025 23:13
+1166729,Tribu API Canales y transaccional producto,software,Dado que: se necesita consultar las TD y TC cuando se incribe a distintos comercios entonces espero que haga cruce con la información reportada.,,Criterio de aceptación,1136511,161/261 Consulta Tarjeta TD/TC vs No. Documento - Certificación Funcional,,26/02/2025 15:36,02/03/2025 23:13
+1166400,Tribu API Canales y transaccional producto,software,Dado que: necesito visualizar mis TD y TC cuando ingreso por los distintos canales entonces espero que se muestre Ãºnicamente las tarjetas de crÃ©dito activas,,Criterio de aceptación,1140090,171 - Consulta de Productos - InterventorÃ­a y Certificación Front Parte 2,,26/02/2025 12:19,
+1166399,Tribu API Canales y transaccional producto,software,Dado que: necesito visualizar mis TD y TC cuando ingreso por los distintos canales entonces espero que para la TC me muestre el numero de tarjeta y  estado,,Criterio de aceptación,1140090,171 - Consulta de Productos - InterventorÃ­a y Certificación Front Parte 2,,26/02/2025 12:18,
+1166398,Tribu API Canales y transaccional producto,software,"Dado que: necesito visualizar mis TD y TC cuando ingreso por los distintos canales entonces espero que para la TD me muestre el numero de cuenta, estado y disponible actualizado",,Criterio de aceptación,1140090,171 - Consulta de Productos - InterventorÃ­a y Certificación Front Parte 2,,26/02/2025 12:18,
+1166397,Tribu API Canales y transaccional producto,software,Dado que: necesito visualizar mis TD y TC cuando ingreso por los distintos canales entonces espero que se muestre  la informaciÃ²n de los productos del cliente (TD y TC).,,Criterio de aceptación,1140090,171 - Consulta de Productos - InterventorÃ­a y Certificación Front Parte 2,,26/02/2025 12:18,
+1166394,Tribu API Canales y transaccional producto,software,Dado que: necesito visualizar mis TD y TC cuando ingreso por los distintos canales entonces  espero que se muestre Ãºnicamente las tarjetas de crÃ©dito activas,,Criterio de aceptación,1139836,171 - Consulta de Productos Front Parte 1,,26/02/2025 12:17,26/02/2025 22:52
+1166393,Tribu API Canales y transaccional producto,software,Dado que: necesito visualizar mis TD y TC cuando ingreso por los distintos canales entonces espero que para la TC me muestre el numero de tarjeta y  estado,,Criterio de aceptación,1139836,171 - Consulta de Productos Front Parte 1,,26/02/2025 12:17,26/02/2025 22:52
+1166392,Tribu API Canales y transaccional producto,software,"Dado que: necesito visualizar mis TD y TC cuando ingreso por los distintos canales entonces espero que para la TD me muestre el numero de cuenta, estado y disponible actualizado",,Criterio de aceptación,1139836,171 - Consulta de Productos Front Parte 1,,26/02/2025 12:17,26/02/2025 22:52
+1166391,Tribu API Canales y transaccional producto,software,Dado que: necesito visualizar mis TD y TC cuando ingreso por los distintos canales entonces espero que se muestre la información de los productos del cliente (TD y TC).,,Criterio de aceptación,1139836,171 - Consulta de Productos Front Parte 1,,26/02/2025 12:16,26/02/2025 22:52
+1165560,Capa de Integración V2,software,DADO que se envia una peticion desde Corporate CUANDO se quiere realizar la validacion de sim ENTONCES Datapower debe recibir la peticion en REST y enrutarla al dominio SOAGovernance en SOAP,,Criterio de aceptación,1138464,Datapower - Exposicion servicio CustomerSimManagement a Corporate en Rest,,25/02/2025 17:50,28/02/2025 13:24
+1163930,Capa de Integración V2,software,DADO que se valide la de OTP en el API SecondaryPublic CUANDO se realice revisión de logs ENTONCES la OTP debe estar ofuscada los primeros 4 digitos,,Criterio de aceptación,1163928,Ofuscacion Logs OTP - Alcance logs,,25/02/2025 08:28,26/02/2025 15:58
+1163929,Capa de Integración V2,software,DADO que se envÃ­e una notificación de OTP por API Notifications CUANDO se realice revisión de logs ENTONCES la OTP debe estar ofuscada los primeros 4 digitos,,Criterio de aceptación,1163928,Ofuscacion Logs OTP - Alcance logs,,25/02/2025 08:28,26/02/2025 15:58
+1163928,Capa de Integración V2,software,Ofuscacion Logs OTP - Alcance logs,"Yo como 
+Deseo que la otp en los logs de notification-mngr y secondaryAuthentication quede ofuscada
+para que se eviten filtraciones de datos sensibles en logs
+
+
+
+
+
+*Notifications*: [https://github.com/bancodebogota/bbog-dig-dt-notification-mngr|https://github.com/bancodebogota/bbog-dig-dt-notification-mngr|smart-link] 
+
+*SecondaryPublic*: [https://github.com/bancodebogota/bbog-dig-dt-secondary-authentication-method-management-public-function|https://github.com/bancodebogota/bbog-dig-dt-secondary-authentication-method-management-public-function|smart-link] 
+
+*Nota*:  API de generación de token :[https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1572766152/API+Access+Token|https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1572766152/API+Access+Token|smart-link] ",Historia,841762,Sostenibilidad - Apis Transversales - Q2-2024,3,25/02/2025 08:28,26/02/2025 15:58
+1163270,Capa de Integración V2,software,Datapower - Ajustar salida a UOB6 para respetar Token si viene del Origen,"Ajuste tÃ©cnico, sobre el componente Backend.corporate.access del DP Interno dominio CloudMicroService agregar la lógica para identificar si viene el campo token en la mensajerÃ­a desde el consumidor respetar el valor enviado, sino enriquecerlo con el token consultado en el proceso automÃ¡tico. ",Historia No Funcional ( Habilitadora),425588,Sostenibilidad - Actualización mensajeria Corporate UOB 6,2,24/02/2025 14:50,26/02/2025 16:31
+1161050,Tribu API Canales y transaccional producto,software,Notificación de activación a monitor plus,"Dado que he activado mi tarjeta dÃ©bito
+â€¢	  Cuando la activación es procesada
+â€¢	  Entonces se debe enviar una notificación de activación hacia monitor plus por medio de la trama Ãºnica",Criterio de aceptación,1161042,TX 154 Activación de la Tarjeta DÃ©bito desde canales digitales,,20/02/2025 19:12,24/02/2025 19:24
+1161043,Tribu API Canales y transaccional producto,software,Activación de tarjeta dÃ©bito para cliente nuevo o antiguo,"Dado que se puede realizar una activación de una tarjeta dÃ©bito a un cliente nuevo o un cliente antiguo del banco
+  Y el cliente tiene una cuenta de ahorros o corriente asignada
+  Y la tarjeta dÃ©bito estÃ¡ en estado ""no reclamada"" 
+  Y la tarjeta existe en el full de tarjetas dÃ©bito como anónima (Estado E no reclamada) Código 56 o 62 P validar 
+  Cuando se solicita la activación de la tarjeta dÃ©bito
+  Entonces la tarjeta debe ser asignada a la cuenta del cliente
+  Y la tarjeta debe pasar a estado ""activo"" En portal Hold response code 
+  Y el cliente debe recibir se tarjeta en estado activo
+  Y el cliente debe cambiar la clave de la tarjeta antes de realizar otras operaciones para que quede en uso (esto aplica en otro servicio) Si esta operación el Card status sigue en estado inactivo",Criterio de aceptación,1161042,TX 154 Activación de la Tarjeta DÃ©bito desde canales digitales,,20/02/2025 19:12,24/02/2025 19:24
+1160386,Capa de Integración V2,software,Datapower - Ajsutar control de error en Json Componente salida a UOB6,"Ajuste Tecnico:
+
+Al momento de tener un error de comunicación con el backend garantizar responder en Json el mensaje de errorr",Historia No Funcional ( Habilitadora),425588,Sostenibilidad - Actualización mensajeria Corporate UOB 6,3,20/02/2025 14:52,26/02/2025 16:31
+1160088,Tribu API Canales y transaccional producto,software,Revisión desde la Base de datos para las vistas,"Dado que se tienen diferentes vistas cuando se realizan pruebas en lÃ­nea desde los diferentes canales entonces se debe validar en la base de datos que la información baje de acuerdo al nodo por donde ingreso la información:
+
+
+
+Vista 1 - Credibanco y Cajeros - Bajan las del Nodo Singe (vista hacia el autorizador) (1)
+
+Resto de vistas 2 a la 10 - Bajan la del Nodo Source (Vista adquiriente) (0)
+
+!image-20250205-163948.png|width=653,height=176,alt=""image-20250205-163948.png""!",Criterio de aceptación,1160083,TX Canales externos - Certificación de Vistas y Generación de Transacciones en Archivo Extract V2,,20/02/2025 12:10,27/02/2025 23:08
+1160087,Tribu API Canales y transaccional producto,software,Generación de transacciones con fecha contable del siguiente dÃ­a hÃ¡bil,"Dado las transacciones se procesan en lÃ­nea algunas pueden llegar con fecha next day
+Cuando el archivo extract se genera
+ Entonces el archivo extract no debe incluir estas transacciones con la fecha contable del siguiente dÃ­a hÃ¡bil (next day), sino hasta el dÃ­a contable correspondiente.",Criterio de aceptación,1160083,TX Canales externos - Certificación de Vistas y Generación de Transacciones en Archivo Extract V2,,20/02/2025 12:10,27/02/2025 23:08
+1160086,Tribu API Canales y transaccional producto,software,Generación de transacciones con fecha contable del dÃ­a actual,"Dado las transacciones se procesan en lÃ­nea
+ Cuando el archivo extract se genera
+ Entonces el archivo extract debe incluir el total de transacciones con la fecha contable del dÃ­a actual (current)",Criterio de aceptación,1160083,TX Canales externos - Certificación de Vistas y Generación de Transacciones en Archivo Extract V2,,20/02/2025 12:10,27/02/2025 23:08
+1160085,Tribu API Canales y transaccional producto,software,Formato de certificación del archivo extract,Dado que se realizaron las regresiones de forma exitosa cuando se realizaron las pruebas desde los diferentes canales entonces se debe revisar que el formato extract no haya cambiado con respecto a certificaciones anteriores.,Criterio de aceptación,1160083,TX Canales externos - Certificación de Vistas y Generación de Transacciones en Archivo Extract V2,,20/02/2025 12:10,27/02/2025 23:08
+1160084,Tribu API Canales y transaccional producto,software,Generación de pruebas de regresión,"Dado los diferentes canales por donde se pueden generar transacciones (Canales externos) que registran transacciones en lÃ­nea
+Cuando se generan pruebas de regresión
+Entonces las pruebas deben asegurar que las transacciones se registren correctamente
+    Y que las transacciones bajen de forma correcta en el proceso batch",Criterio de aceptación,1160083,TX Canales externos - Certificación de Vistas y Generación de Transacciones en Archivo Extract V2,,20/02/2025 12:09,27/02/2025 23:08
+1159648,Capa de Integración V2,software,"Dado que se consuma alguna de las apis (GetBasicInfo customerv3) que envian reporteria. Cuando se valide el logs del componente"" y se genere error. Entonces se debe ver registros  en cloudwatch (ERROR)  y valdiar en grafana",,Criterio de aceptación,1148816,AWS - lambda report_subscriber_elasticsearch - Optimizar escritura logs,,20/02/2025 10:10,05/03/2025 12:48
+1159645,Capa de Integración V2,software,"Dado que se consuma alguna de las apis (GetBasicInfo customerv3) que envian reporteria. Cuando se valide el logs del componente"" y responda exitoso. Entonces se debe ver registros  en cloudwatch y valdiar en grafana",,Criterio de aceptación,1148816,AWS - lambda report_subscriber_elasticsearch - Optimizar escritura logs,,20/02/2025 10:09,05/03/2025 12:48
+1157484,Capa de Integración V2,software,Verificación actualización de plantillas - Notificación beneficiarios DISFON,"*Dado:* que se ingrese a Latinia.
+
+*Cuando:* se actualice las plantillas Notificación beneficiarios DISFON
+
+*Entonces:* se debe enviar los email a los beneficiarios de dispersiones de fondos enviadas por el proceso de pagos de nomina y proveedores para informar cuando el abono se ha realizado o cuando el abono se ha enviado a una entidad externa.",Criterio de aceptación,1157483,LATINIA - Actualización plantillas notificación beneficiarios DISFON,,18/02/2025 21:53,28/02/2025 15:50
+1157483,Capa de Integración V2,software,LATINIA - Actualización plantillas notificación beneficiarios DISFON,"*Yo Como* Cliente empresarial
+
+*Quiero* que se notifique a los beneficiarios de dispersiones de fondos enviadas por el proceso de pagos de nomina y proveedores
+
+*Para* informar cuando el abono se ha realizado o cuando el abono se ha enviado a una entidad externa
+
+Detalleas adicionales:
+
+Insumos Correo: 
+
+{color:#36b37e}*Información e Insumo de Solución:*{color}
+
+Se actualiza en PD
+
+
+
+Grupo:         SETIN
+Nombre:      Fondos Externos
+Referencia:   notificacion_externos
+Archivo:        fondo-masivo_latinia Externo.html
+
+
+
+Grupo:         SETIN
+Nombre:      Fondos Internas
+Referencia:   notificacion_internos
+Archivo:       fondo-masivo_2_latinia Interno.html",Historia,1157482,Crecimiento - Actualización Plantillas notificaciones beneficiarios DISFON,3,18/02/2025 21:50,28/02/2025 15:52
+1157479,Capa de Integración V2,software,Verificación actualización de plantillas - Actualización proceso pagos,"*Dado:* que se ingrese a Latinia.
+
+*Cuando:* se actualice las plantillas Actualización proceso pagos
+
+*Entonces:* se debe enviar los email informarndo y guiar al delegado de la empresa para la notificación de la Actualización proceso pagos.",Criterio de aceptación,1157478,LATINIA - Actualización plantilla Actualización proceso pagos,,18/02/2025 21:40,04/03/2025 13:48
+1157478,Capa de Integración V2,software,LATINIA - Actualización plantilla Actualización proceso pagos,"*Yo Como* Cliente empresarial
+
+*Quiero* que me envÃ­en un correo a mi usuario delegado (plantilla Actualización proceso pagos)
+
+*Para* conocer el estado de la validación del archivo en el proceso de pagos.
+
+Detalles adicionales: Historia con la que se cargó la primer versión [[MANG-15613] LATINIA - Cargue plantilla Actualización proceso pagos - JIRA|https://bancodebogota.atlassian.net/browse/MANG-15613]
+
+Insumos Correo: 
+
+{color:#36b37e}*Información e Insumo de Solución:*{color}
+
+*Se carga en ambiente QA*
+
+Grupo:                               Contingencia Pagos
+Nombre:                            Actualizacion proceso pagos
+Referencia:		          proceso_pagos
+Nombre de archivo:          contingencia pagos PJ.html",Historia,1076110,Experiencia 642 Potencializar la oferta de valor de pagos - Parametrizar las plantillas de la contingencia de pagos,1,18/02/2025 21:40,04/03/2025 13:48
+1157477,Capa de Integración V2,software,Verificación de actualización de plantilla Transmisión de pagos enviada,"*Dado:* que se ingrese a Latinia.
+
+*Cuando:* se actualice las plantillas Transmisión de pagos enviada
+
+*Entonces:* se debe enviar los email con la infomración del pago enviado desde la web de contigencia el cual incluye fechas, hora, empresa , cuenta, cantidad de transacciones y monto total.",Criterio de aceptación,1157476,LATINIA - Actualización plantilla Transmisión de pagos enviada,,18/02/2025 21:39,04/03/2025 13:47
+1157476,Capa de Integración V2,software,LATINIA - Actualización plantilla Transmisión de pagos enviada,"*Yo Como* Cliente empresarial
+
+*Quiero* que me envÃ­en un correo a mi usuario delegado  (plantilla Transmisión de pagos enviada)
+
+*Para* tener la infomración del pago enviado desde la web de contigencia el cual incluye fechas, hora, empresa , cuenta, cantidad de transacciones y monto total.
+
+Detalles adicionales: Historia con la que se cargó la primer versión, [[MANG-15612] LATINIA - Cargue plantilla Transmisión de pagos enviada - JIRA|https://bancodebogota.atlassian.net/browse/MANG-15612]
+
+Insumos Correo: 
+
+{color:#36b37e}*Información e Insumo de Solución:*{color}
+
+*Se carga en ambiente QA*
+
+Grupo:                               Contingencia Pagos
+Nombre:                            Transmision de pagos enviada
+Referencia:		          transmision_pagos
+Nombre de archivo:           correo4_detalle.html",Historia,1076110,Experiencia 642 Potencializar la oferta de valor de pagos - Parametrizar las plantillas de la contingencia de pagos,1,18/02/2025 21:38,04/03/2025 13:49
+1157475,Capa de Integración V2,software,Verificación de actualización de plantilla Instrucciones de Acceso,"*Dado:* que se ingrese a Latinia.
+
+*Cuando:* se actualice las plantillas Instrucciones de Acceso
+
+*Entonces:* se debe enviar los email indicando como acceder a la web de contingencia, cuando se active la web de contingencia del producto de pagos.",Criterio de aceptación,1157474,LATINIA - Actualización plantilla Instrucciones de Acceso,,18/02/2025 21:37,04/03/2025 13:46
+1157474,Capa de Integración V2,software,LATINIA - Actualización plantilla Instrucciones de Acceso,"*Yo Como* Cliente empresarial
+
+*Quiero* que me envÃ­en un correo a mi usuario delegado (plantilla Instrucciones de Acceso)
+
+*Para* indicar como acceder a la web de contingencia, cuando se active la web de contingencia del producto de pagos.
+
+Detalles adicionales: Historia con la que se cargó la primer versión, [https://bancodebogota.atlassian.net/browse/MANG-15611|https://bancodebogota.atlassian.net/browse/MANG-15611|smart-link].
+
+Insumos Correo: 
+
+{color:#36b37e}*Información e Insumo de Solución:*{color}
+
+*Se carga en ambiente QA*
+
+Grupo:                               Contingencia Pagos
+Nombre:                            Instrucciones de acceso
+Referencia:		          instructivo_acceso
+Nombre de archivo:          correo1_ acceso.html",Historia,1076110,Experiencia 642 Potencializar la oferta de valor de pagos - Parametrizar las plantillas de la contingencia de pagos,1,18/02/2025 21:36,04/03/2025 13:49
+1157468,Capa de Integración V2,software,Verificación actualización de plantillas - Contingencia de Pagos,"*Dado:* que se ingrese a Latinia.
+
+*Cuando:* se actualice las plantillas Contingencia de Pagos
+
+*Entonces:* se debe enviar los email informarndo y guiar al delegado de la empresa para la notificación de la contingencia de pagos.",Criterio de aceptación,1157467,LATINIA - Actualizar las plantillas de la contingencia de pagos,,18/02/2025 21:29,04/03/2025 13:46
+1157467,Capa de Integración V2,software,LATINIA - Actualizar las plantillas de la contingencia de pagos,"*Yo Como* Banco BdB
+
+*Quiero* Actualizar la plantilla que se utilizara en diferentes momentos de la contingencia de pagos.
+
+*Para* Informar y guiar al delegado de la empresa.
+
+Detalles adicionales: Historia con la que se cargó la primer versión [[MANG-15289] LATINIA - Parametrizar las plantillas de la contingencia de pagos - JIRA|https://bancodebogota.atlassian.net/browse/MANG-15289]
+
+Insumos Correo: 
+
+{color:#36b37e}*Información e Insumo de Solución:*{color}
+
+*Se carga en ambiente QA*
+
+Grupo:                               Contingencia Pagos
+Nombre:                            OTP para login o transmision
+Referencia:		         otp_login_transmision
+Nombre de archivo:          Correo2_contingencia_codigodeiniciodesesion.html",Historia,1076110,Experiencia 642 Potencializar la oferta de valor de pagos - Parametrizar las plantillas de la contingencia de pagos,1,18/02/2025 21:29,04/03/2025 13:48
+1156979,Capa de Integración V2,software,"Dado que se consuma el stepfucntion, Cuando se parametrice la consulta a la bd con un limite de x registros. Entonces al recibir respuesta si no existen mas registros se debe traer y procesar y finalizar el proceso",,Criterio de aceptación,1134869,AWS - StepFunctionsTransfiya - Ajustes configuración y paginado,,18/02/2025 15:15,18/02/2025 20:15
+1156965,Capa de Integración V2,software,"Dado que se consuma el stepfucntion, Cuando se parametrice la consulta a la bd con un limite de x registros. Entonces al recibir respuesta validar si existen mas registros se debe traer y procesar hasta que se cumpla el numero de paginado parametrizado",,Criterio de aceptación,1134869,AWS - StepFunctionsTransfiya - Ajustes configuración y paginado,,18/02/2025 15:14,18/02/2025 20:15
+1156962,Capa de Integración V2,software,Dado que se consuma el stepFunction. Cuando se relalice la consulta a la Base de datos. Entonces debe traer solo los campos requeridos para el reverso,,Criterio de aceptación,1134869,AWS - StepFunctionsTransfiya - Ajustes configuración y paginado,,18/02/2025 15:13,18/02/2025 20:15
+1156843,Capa de Integración V2,software,DADO QUE se consutla el estado de una transferencia ACH CUANDO esta es rechazada ENTONCES en la mensajeria de respuesta se debe ver el campo <ifx:XferStatus>.<ifx:Status>.<ifx:ServerStatusDesc/> poblado con el valor correspondiente ,,Criterio de aceptación,1156627,Broker - Cargue descripciones estado transferencia ACH,,18/02/2025 14:33,26/02/2025 20:17
+1156315,Tribu API Canales y transaccional producto,software,Dado que necesito enviar archivos al emisor de TC Cuando: Se debe realizar el cargue en postcard Entonces: Espero que queden los archivos en la ruta esperada para realizar el respectivo cargue,,Criterio de aceptación,1112946,HU[H] - Validación mallas transmisión archivos desde Office hacia Realtime,,18/02/2025 10:42,
+1156310,Tribu API Canales y transaccional producto,software,Dado que necesito enviar archivos al emisor de TC Cuando: Se debe realizar el cargue en postcard Entonces: Espero que se envÃ­en los 13 archivos al servidor de Portal,,Criterio de aceptación,1112946,HU[H] - Validación mallas transmisión archivos desde Office hacia Realtime,,18/02/2025 10:41,
+1155458,Tribu API Canales y transaccional producto,software,Dado que requiero hacer bloqueos de Tarjeta dÃ©bito Cuando se invoca el servicio por PPE Entonces: Espero que se realice satisfactoriamente el bloqueo a travÃ©s de PPE,,Criterio de aceptación,1138147,CAS - Bloqueo/Desbloqueo PPE,,17/02/2025 18:58,
+1155456,Tribu API Canales y transaccional producto,software,Dado que requiero hacer bloqueos de Tarjeta dÃ©bito Cuando se invoca el servicio por PPE Entonces: Espero que se pueda consumir el actual servicio con el canal PPE,,Criterio de aceptación,1138147,CAS - Bloqueo/Desbloqueo PPE,,17/02/2025 18:58,
+1155360,Tribu API Canales y transaccional producto,software,DADO QUE Necesito consumir la información del API de Asignación Comercial CUANDO se requiere en HNT ENTONCES espero que se haga validación tÃ©cnica de un par de desarrollo,,Criterio de aceptación,1007912,HU [H] - Almacenamiento Argus Usuario Integración PGT y MCC,,17/02/2025 17:35,
+1155358,Tribu API Canales y transaccional producto,software,DADO QUE Necesito consumir la información del API de Asignación Comercial CUANDO se requiere en HNT ENTONCES espero documentos con la información necesaria para catalogar en producción la API KEY,,Criterio de aceptación,1007912,HU [H] - Almacenamiento Argus Usuario Integración PGT y MCC,,17/02/2025 17:35,
+1155355,Tribu API Canales y transaccional producto,software,DADO QUE Necesito consumir la información del API de Asignación Comercial CUANDO se requiere en HNT ENTONCES espero que se parametrice la aplicación y componente de llaves y contraseÃ±a en Argus,,Criterio de aceptación,1007912,HU [H] - Almacenamiento Argus Usuario Integración PGT y MCC,,17/02/2025 17:35,
+1153446,Capa de Integración V2,software,"Dado que se consuma el api InternalCreditBureau. Cuando se consuma el recurso ""/V1/Enterprise/ods - GET "". Entonces se debe recibir respuesta de Backend, vlaidar logs y ver registro reporte pentagono exitoso en lambda de pentagono",,Criterio de aceptación,780487,"AWS - Ajuste en envio de eventos a pentagono (datacredito, ods, ver si mas)",,14/02/2025 14:12,19/02/2025 19:52
+1151284,Capa de Integración V2,software,DADO que se consuma el API de campaÃ±as CUANDO se consulte el recurso /getByCustomer ENTONCES debe visualizarse el evento de OpenTelemetry en el tablero de Grafana,"h1. {color:#00b8d9}*Tablero de Grafana*{color}
+[https://grafana.labdigstgmonitoring.com/d/eecy94jwllb0gc/campaign?orgId=14&from=now-6h&to=now&timezone=browser|https://grafana.labdigstgmonitoring.com/d/eecy94jwllb0gc/campaign?orgId=14&from=now-6h&to=now&timezone=browser]",Criterio de aceptación,1123653,AWS - Error validacion de tipo de documento,,13/02/2025 10:08,19/02/2025 19:54
+1150037,Capa de Integración V2,software,"Dado que se consuma el api EventData. Cuando se envÃ­e el recurso ""/V1/Utilities/data/transaction/event/publish-POS"", se presente una falla del backend. Entonces responder HTTP_500 y dejar los logs de acuerdo a descripción HU  para el caso de error",,Criterio de aceptación,1148823,AWS - Lambda event-data-transaction - Optimizar escritura logs,,12/02/2025 12:17,05/03/2025 12:54
+1150033,Capa de Integración V2,software,"Dado que se consuma el api EventData. Cuando se envÃ­e el recurso ""/V1/Utilities/data/transaction/event/publish-POST"" con data valida. Entonces responder HTTP_200, dejar los logs de acuerdo a descripción HU. no repetir trazas y ver en grafana.",,Criterio de aceptación,1148823,AWS - Lambda event-data-transaction - Optimizar escritura logs,,12/02/2025 12:16,05/03/2025 12:54
+1149553,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se envie o valide la OTP y falle internamente la aplicación. Entonces se debe obtener respuesta del backend principal HTTP_500",,Criterio de aceptación,1149462,AWS - API SecondaryAuth - Ajuste estructuras respuesta segÃºn definición OAS,,12/02/2025 10:12,05/03/2025 15:10
+1149552,Capa de Integración V2,software,"Dado que se consuma el api Secondary, Cuando se envie o valide la OTP  y presente demoras el backend. Entonces se debe obtener respuesta  HTTP_408",,Criterio de aceptación,1149462,AWS - API SecondaryAuth - Ajuste estructuras respuesta segÃºn definición OAS,,12/02/2025 10:11,05/03/2025 15:10
+1149549,Capa de Integración V2,software,"Dado que se consuma el api Secondary, Cuando se envie o valide  la OPT y no cumpla con la estructura . Entonces se debe obtener respuesta HTTP_400",,Criterio de aceptación,1149462,AWS - API SecondaryAuth - Ajuste estructuras respuesta segÃºn definición OAS,,12/02/2025 10:11,05/03/2025 15:10
+1149543,Capa de Integración V2,software,"Dado que se consuma el api Secondary, Cuando se envie OTPo valide. Entonces se debe obtener respuesta del backend principal HTTP_200 segÃºn documentación",,Criterio de aceptación,1149462,AWS - API SecondaryAuth - Ajuste estructuras respuesta segÃºn definición OAS,,12/02/2025 10:11,05/03/2025 17:11
+1149462,Capa de Integración V2,software,AWS - API SecondaryAuth - Ajuste estructuras respuesta segÃºn definición OAS,"h1. {color:#00b8d9}*Descripción*{color}
+
+{color:#00b8d9}*Yo Como*{color} usuario del API SecondaryAuthPublic v2 desde BancaMovil, corporate,
+
+{color:#00b8d9}*Quiero*{color} se valide la estructura de respuestas entregadas por el API,
+
+{color:#00b8d9}*Para*{color} que se estandaricen y sean consecuentes con la documentación
+
+___________________________________________________________________________________________________
+
+h1. {color:#00b8d9}*Material de apoyo*{color}
+
+* Componente
+[https://github.com/bancodebogota/bbog-dig-dt-secondary-authentication-method-v2-mngr|https://github.com/bancodebogota/bbog-dig-dt-secondary-authentication-method-v2-mngr|smart-link] 
+* Confluence
+[https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1973354613/API+secondaryAuthenticationMethodManagement+Private|https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1973354613/API+secondaryAuthenticationMethodManagement+Private|smart-link] 
+
+___________________________________________________________________________________________________
+
+h1. {color:#00b8d9}*Arbol de problema*{color}
+
+{color:#00b8d9}*Raiz del problema*{color}
+
+Se evidencio que el componente no esta cumpliendo con respuestas segÃºn el contrato, esto hace parte de una iniciativa por parte del COE de arquitectura, y se esta utilizando actualmente para BM Corporate, encargado de enviar OTP.
+
+{color:#00b8d9}*Solución*{color}
+
+Se encontró que la raÃ­z del problema es dado que nose cumple con los establecido en el contrato OAS, tambiÃ©n se ve oportunidades de mejora frente a estas (formato actual de errores).
+
+*_Estructura respuesta ejemplo:_*
+
+!image-20250213-201458.png|width=603,height=214,alt=""image-20250213-201458.png""!
+
+__________________________________________________________________________________________________
+
+h1. {color:#00b8d9}*Pulls PROD*{color}
+
+* Rama â†’ Release",Historia,1149461,Sostenibilidad - Apis Transversales - Q1-2025,5,12/02/2025 09:31,05/03/2025 15:10
+1149169,Capa de Integración V2,software,"Dado que se consuma el api notificationsManagement. Cuando se envÃ­e el recurso ""/V1/Utilities/notification/sendMessage - POST"", se presente una falla del backend. Entonces responder HTTP_500 y dejar los logs de acuerdo a  HU  para el caso de error",,Criterio de aceptación,1148834,AWS - Lambda notification-mngr - Optimizar escritura logs ,,12/02/2025 07:33,05/03/2025 12:45
+1149168,Capa de Integración V2,software,"Dado que se consuma el api notificationsManagement. Cuando se envÃ­e el recurso ""/V1/Utilities/notification/sendMessage - POST"" con data valida. Entonces debe responder HTTP_200 y dejar los logs segÃºnHU. No repetir trazas. Ver Rta en grafana",,Criterio de aceptación,1148834,AWS - Lambda notification-mngr - Optimizar escritura logs ,,12/02/2025 07:31,05/03/2025 12:45
+1149167,Capa de Integración V2,software,"Dado que se consuma el api notificationsManagement. Cuando se envÃ­e el recurso ""/V1/Utilities/notification/sendMessageWhatsApp -POST"", se presente una falla del backend. Entonces responder HTTP_500 y dejar los logs de acuerdo a HU  para el caso de error",,Criterio de aceptación,1148834,AWS - Lambda notification-mngr - Optimizar escritura logs ,,12/02/2025 07:31,05/03/2025 12:45
+1149166,Capa de Integración V2,software,"Dado que se consuma el api notificationsManagement. Cuando se envÃ­e el recurso ""/V1/Utilities/notification/sendMessageWhatsApp -POST"" con data valida. Entonces responder HTTP_200, dejar los logs de acuerdo a descripción HU. no repetir trazas ",,Criterio de aceptación,1148834,AWS - Lambda notification-mngr - Optimizar escritura logs ,,12/02/2025 07:30,05/03/2025 12:45
+1149165,Capa de Integración V2,software,"Dado que se consuma el api notificationsManagement. Cuando se envÃ­e el recurso ""/V1/Utilities/notification/sendEmail -POST"", se presente una falla del backend. Entonces responder HTTP_500 y dejar los logs de acuerdo a descripción HU  para el caso de error",,Criterio de aceptación,1148834,AWS - Lambda notification-mngr - Optimizar escritura logs ,,12/02/2025 07:30,05/03/2025 12:45
+1149164,Capa de Integración V2,software,"Dado que se consuma el api notificationsManagement. Cuando se envÃ­e el recurso ""/V1/Utilities/notification/sendEmail -POST"" con data valida. Entonces responder HTTP_200, dejar los logs de acuerdo a descripción HU. no repetir trazas y ver en grafana.",,Criterio de aceptación,1148834,AWS - Lambda notification-mngr - Optimizar escritura logs ,,12/02/2025 07:28,05/03/2025 12:45
+1149142,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo certificados. Entonces se debe obtener respuesta del backend principal HTTP_500",,Criterio de aceptación,1149137,AWS - API Saldos - Implementar Consulta Saldos certificados,,12/02/2025 06:46,03/03/2025 13:11
+1149141,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo certificados y presente demoras el backend. Entonces se debe obtener respuesta  HTTP_408",,Criterio de aceptación,1149137,AWS - API Saldos - Implementar Consulta Saldos certificados,,12/02/2025 06:46,03/03/2025 13:11
+1149140,Capa de Integración V2,software,"Dado que se consuma el api de saldos , Cuando se consulte el saldo certificados. Entonces se debe obtener respuesta HTTP_400",,Criterio de aceptación,1149137,AWS - API Saldos - Implementar Consulta Saldos certificados,,12/02/2025 06:46,03/03/2025 13:11
+1149139,Capa de Integración V2,software,"Dado que se consuma el api de saldos , Cuando se consulte el saldo certificados. Entonces se debe obtener respuesta HTTP_409",,Criterio de aceptación,1149137,AWS - API Saldos - Implementar Consulta Saldos certificados,,12/02/2025 06:46,03/03/2025 13:11
+1149138,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo certificados. Entonces se debe obtener respuesta del backend principal HTTP_200",,Criterio de aceptación,1149137,AWS - API Saldos - Implementar Consulta Saldos certificados,,12/02/2025 06:46,03/03/2025 13:11
+1149137,Capa de Integración V2,software,AWS - API Saldos - Implementar Consulta Saldos certificados,"Yo como usuario de los canales bancamovil y banca virutal
+
+Quiero se pueda realizar la migración de la consulta de saldos creditos a traves del api de balances
+
+Para poder tener un menor tiempo de respuesta en las peticiones iniciales al no requerir el precalentamiento de lambdas
+
+Documentació:[https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1383207010/balanceManagement|https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1383207010/balanceManagement|smart-link] 
+
+
+
+Evidencias
+
+||*Escenario*||*Respuesta*||*Logs*||
+|HTTP_200|!image-20250224-112535.png|width=584,height=528,alt=""image-20250224-112535.png""!|!image-20250224-114216.png|width=1304,height=318,alt=""image-20250224-114216.png""!|
+|HTTP_400|!image-20250225-105200.png|width=471,height=201,alt=""image-20250225-105200.png""!|!image-20250225-105315.png|width=1335,height=235,alt=""image-20250225-105315.png""!|
+|HTTP_404|No se logra generar directo al api| |
+|HTTP_408|!image-20250225-110306.png|width=530,height=313,alt=""image-20250225-110306.png""!|!image-20250225-110214.png|width=1314,height=289,alt=""image-20250225-110214.png""!|
+|HTTP_409|!image-20250225-112324.png|width=558,height=327,alt=""image-20250225-112324.png""!|!image-20250225-112456.png|width=1312,height=658,alt=""image-20250225-112456.png""!|
+|HTTP_500|!image-20250225-111116.png|width=547,height=342,alt=""image-20250225-111116.png""!|!image-20250225-111154.png|width=1300,height=387,alt=""image-20250225-111154.png""!|
+
+Curl Prueba: [https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/4914905486/API+BalanceManagemet+V2|https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/4914905486/API+BalanceManagemet+V2|smart-link] ",Historia,1104982,Sostenibilidad - Contingencia,5,12/02/2025 06:46,03/03/2025 13:11
+1149136,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo creditos. Entonces se debe obtener respuesta del backend principal HTTP_500",,Criterio de aceptación,1108928,AWS - API Saldos - Implementar Consulta Saldos de CrÃ©ditos,,12/02/2025 06:44,05/03/2025 15:11
+1149135,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo creditos y presente demoras el backend. Entonces se debe obtener respuesta  HTTP_408",,Criterio de aceptación,1108928,AWS - API Saldos - Implementar Consulta Saldos de CrÃ©ditos,,12/02/2025 06:44,05/03/2025 15:11
+1149133,Capa de Integración V2,software,"Dado que se consuma el api de saldos , Cuando se consulte el saldo creditos. Entonces se debe obtener respuesta HTTP_400",,Criterio de aceptación,1108928,AWS - API Saldos - Implementar Consulta Saldos de CrÃ©ditos,,12/02/2025 06:43,05/03/2025 15:11
+1149132,Capa de Integración V2,software,"Dado que se consuma el api de saldos , Cuando se consulte el saldo creditos. Entonces se debe obtener respuesta HTTP_409",,Criterio de aceptación,1108928,AWS - API Saldos - Implementar Consulta Saldos de CrÃ©ditos,,12/02/2025 06:43,05/03/2025 15:12
+1149131,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo creditos. Entonces se debe obtener respuesta del backend principal HTTP_200",,Criterio de aceptación,1108928,AWS - API Saldos - Implementar Consulta Saldos de CrÃ©ditos,,12/02/2025 06:43,05/03/2025 15:12
+1148834,Capa de Integración V2,software,AWS - Lambda notification-mngr - Optimizar escritura logs ,"Yo como Equipo de Arquitectura
+
+Quiero se realice la optimización de escritrua de logs garantizando:
+
+* No se repiten trazas
+** Escribir en logs petición request API(info)
+** Escribir en logs petición request Backend ( url, header, params, body) (info)
+** Escribir en logs respuesta Backend (codigo, estado, mensaje)(info)
+** Escribir en logs respuesta API (código, estado, mensaje) ( debug )
+** Escribir los de error especificos, no stack completo
+
+Para poder de esta forma realizar reducción de costos relacionados a escritura de información en cloudwatch
+
+
+
+Documentación API: [https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1189380575/API+notificationsManagement|https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1189380575/API+notificationsManagement|smart-link] 
+
+Recursos
+
+* {{/V1/Utilities/notification/sendEmail}} -POST
+* {{/V1/Utilities/notification/sendMessageWhatsApp}}
+* {{/V2/Utilities/notification/sendMessageWhatsApp}}
+* {{/V1/Utilities/notification/sendMessage}} - POST
+
+{color:#ff5630}*_Nota: Garantizar que la respuesta de la API esta siendo reportada a Elastic_*{color}",Historia,1148804,Sostenibilidad - ReduccionCostos Servicios APIS TVS - AWS,5,11/02/2025 16:34,05/03/2025 12:44
+1148823,Capa de Integración V2,software,AWS - Lambda event-data-transaction - Optimizar escritura logs,"Yo como Equipo de Arquitectura
+
+Quiero se realice la optimización de escritrua de logs garantizando:
+
+* No se repiten trazas
+** Escribir en logs petición request API(info)
+** Escribir en logs petición request Backend ( url, header, params, body) (info)
+** Escribir en logs respuesta Backend (codigo, estado, mensaje)(info)
+** Escribir en logs respuesta API (código, estado, mensaje) ( debug )
+** Escribir los de error especificos, no stack completo
+
+Para poder de esta forma realizar reducción de costos relacionados a escritura de información en cloudwatch
+
+
+
+Documentación API: [https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/2231763189/Transactional+Event+Data+Management|https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/2231763189/Transactional+Event+Data+Management|smart-link]  
+
+Repo: [https://github.com/bancodebogota/bbog-dig-dt-event-transaction-broker-function|https://github.com/bancodebogota/bbog-dig-dt-event-transaction-broker-function|smart-link] 
+
+IAC: [https://github.com/bancodebogota/bbog-dig-dt-aws-tvs-base-iac|https://github.com/bancodebogota/bbog-dig-dt-aws-tvs-base-iac|smart-link] 
+
+LOGS: [https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups/log-group/$252Faws$252Flambda$252Ftransactional_event_data|https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups/log-group/$252Faws$252Flambda$252Ftransactional_event_data]
+
+Recursos
+
+* {{/V1/Utilities/data/transaction/event/publish-POST}}
+
+
+
+Criterios
+
+* {color:#ff5630}*_Dejar Traza de entrada en Info_*{color}
+* {color:#ff5630}*_Dejar mensaje de finalización de forma exitosa con SNS_*{color}
+* {color:#ff5630}*_Dejar excepción especifica_*{color}",Historia,1148804,Sostenibilidad - ReduccionCostos Servicios APIS TVS - AWS,5,11/02/2025 16:31,05/03/2025 12:54
+1148816,Capa de Integración V2,software,AWS - lambda report_subscriber_elasticsearch - Optimizar escritura logs,"Yo como Equipo de Arquitectura
+
+Quiero se realice la optimización de escritrua de logs garantizando:
+
+* No se repiten trazas
+** Escribir en logs petición request API(info)
+** Escribir en logs petición request Backend ( url, header, params, body) (info)
+** Escribir en logs respuesta Backend (codigo, estado, mensaje)(info)
+** Escribir en logs respuesta API (código, estado, mensaje) ( debug )
+** Escribir los de error especificos, no stack completo
+
+Para poder de esta forma realizar reducción de costos relacionados a escritura de información en cloudwatch
+
+
+
+Url lambda AWS: [https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions/report_subscriber_elasticsearch?tab=code|https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions/report_subscriber_elasticsearch?tab=code]",Historia,1148804,Sostenibilidad - ReduccionCostos Servicios APIS TVS - AWS,3,11/02/2025 16:29,05/03/2025 12:48
+1148620,Capa de Integración V2,software,"Dado que se consuma el API transactionalEventDataManagement. Cuando se consuma el recurso ""/V1/Utilities/data/transaction/event/publish-POST"". Con data Valida pero falle el backend. Entonces genera HTTP 500 y el respectivo detalle de la respuesta",,Criterio de aceptación,1111137,AWS - Migracion Node 14 a Node 20 API transactionalEventDataManagement (qwo8qmzfne),,11/02/2025 14:55,18/02/2025 13:22
+1144464,Capa de Integración V2,software,Evidencias el uso del handler correcto para el objeto MPG en Datapower Externo,"*Dado:* Que se exponga el MPG en Datapower Externo
+
+*Cuando:* Se valide el uso correcto de su respectivo handler para ATH-ICBS
+
+*Entonces:* Este debe devolver la información de la consulta de estado de una transacción en ICBS.",Criterio de aceptación,1125888,Datapower - Virtualización DP Externo/Interno del Servicio REST Transfers_Timeout (Sincronización de estados de transferencias por time-out),,06/02/2025 15:49,18/02/2025 04:11
+1144123,Capa de Integración V2,software,DADO QUE se recibe una peticion tipo SOA CUANDO quieren consumir a SISCOI desde la neuva version de PBIT ENTONCES DP Externo e Interno hacen el paso del mensaje tal cual a SISCOI,,Criterio de aceptación,1144112,Datapower - Consulta de Ordener de Pago y operaciones SISCOI HNF,,06/02/2025 14:55,07/02/2025 16:44
+1144112,Capa de Integración V2,software,Datapower - Consulta de Ordener de Pago y operaciones SISCOI HNF,"yo
+
+como
+
+quiero
+
+para
+
+
+
+Ajuste TÃ©cnico:
+
+Eliminar la exposición de la fachada rest de lo desarrollado en la HU  [https://bancodebogota.atlassian.net/browse/MANG-8989|https://bancodebogota.atlassian.net/browse/MANG-8989|smart-link] ",Historia No Funcional ( Habilitadora),781094,Crecimiento 13897 Nuevo portal de Divisas PBIT - Comunicación SISCOI,3,06/02/2025 14:52,13/02/2025 22:07
+1142864,Tribu API Canales y transaccional producto,software,"Dado que necesito casos de pruebas en la consulta para un cliente que tiene una T.D. asociada a mas de una cta cte y/o  Cta Ah sin T.C. Cuando se realicen las pruebas, entonces se debe garantizar que funcione de forma correcta antes de iniciar la certif.",,Criterio de aceptación,1136581,"171 - Consulta de Productos Batch AGV, LIV y BEP",,05/02/2025 18:41,17/02/2025 21:18
+1142863,Tribu API Canales y transaccional producto,software,"Dado que necesito  casos de pruebas en la consulta para un cliente que tiene una T.D. asociada a mas de una cta cte y/o  Cta Ah y 1 T.C. Cuando se realicen las pruebas, entonces se debe garantizar que funcione de forma correcta antes de iniciar la certif.",,Criterio de aceptación,1136581,"171 - Consulta de Productos Batch AGV, LIV y BEP",,05/02/2025 18:41,17/02/2025 21:18
+1142862,Tribu API Canales y transaccional producto,software,"Dado que necesito casos de pruebas en la consulta para un cliente que tiene una T.D. asociada a una cta cte o  Cta Ah y sin T.C. Cuando se realicen las pruebas, entonces se debe garantizar que funcione de forma correcta antes de iniciar la certificación",,Criterio de aceptación,1136581,"171 - Consulta de Productos Batch AGV, LIV y BEP",,05/02/2025 18:40,17/02/2025 21:18
+1142861,Tribu API Canales y transaccional producto,software,Dado que: necesito casos de pruebas en la consulta para un cliente que tiene una T.D. asociada a una cta cte o Cta Ah y 1 T.C. Cuando se realicen las pruebas entonces se debe garantizar que funcione de forma correcta antes de iniciar la certificación,,Criterio de aceptación,1136581,"171 - Consulta de Productos Batch AGV, LIV y BEP",,05/02/2025 18:40,17/02/2025 21:17
+1142860,Tribu API Canales y transaccional producto,software,Dado que se establecieron casos de pruebas en la consulta para un cliente que tiene una T.D. asociada a una cta cte o  Cta Ah y 1 T.C. Cuando se realicen las pruebas entonces se debe garantizar que funcione de forma correcta antes de iniciar la certif,,Criterio de aceptación,1136581,"171 - Consulta de Productos Batch AGV, LIV y BEP",,05/02/2025 18:40,17/02/2025 21:17
+1142858,Tribu API Canales y transaccional producto,software,Proceso batch de transacciones de recaudos,"Dado que una transacción de recaudo es recibida en el proceso batch
+    Cuando el archivo de movimientos extract es generado
+    Entonces se deben generar registros independientes de abono para el convenio principal y el subconvenio",Criterio de aceptación,1142855,Procesamiento de pagos para convenios y subconvenios,,05/02/2025 18:38,27/02/2025 14:29
+1142857,Tribu API Canales y transaccional producto,software,Configuración de convenios y subconvenios,"Dado que un convenio o subconvenio estÃ¡ configurado
+    Cuando se realiza una transacción de recaudo
+    Entonces se deben aplicar las mismas consideraciones que fue realizada en la certificación de PSP
+    Y se debe verificar si el abono es en lÃ­nea o en batch
+    Y se debe verificar si el abono es detallado o consolidado por canal
+    Y se debe verificar si el convenio es del Banco de BogotÃ¡ o Aval
+    Y se debe verificar que la cuenta relacionada exista y tenga un estado vÃ¡lido para realizar la operación",Criterio de aceptación,1142855,Procesamiento de pagos para convenios y subconvenios,,05/02/2025 18:38,27/02/2025 14:29
+1142856,Tribu API Canales y transaccional producto,software,Recepción y procesamiento de transacciones de recaudos para convenios y subconvenios,"Dado que una transacción de recaudo es recibida desde AVC
+Cuando las Ãºltimas dos posiciones del campo 104  en la mensajerÃ­a base24 contienen el código del subconvenio
+Entonces la transacción debe ser procesada para el subconvenio correspondiente",Criterio de aceptación,1142855,Procesamiento de pagos para convenios y subconvenios,,05/02/2025 18:37,27/02/2025 14:29
+1142854,Tribu API Canales y transaccional producto,software,"Dado que Necesito garantizar la consistencia de la transaccion Cuando: Se tiene alta carga transaccional Entonces: Espero que en caso de tener error, que exista un archivo aparte para validar mejor estos mensajes ",,Criterio de aceptación,1140055,171 PB - Consulta de Productos - CarProductInquiry -> getCardProduct - Pruebas de Carga,,05/02/2025 18:31,17/02/2025 16:54
+1142853,Tribu API Canales y transaccional producto,software,"Dado que Necesito garantizar la consistencia de la transaccion Cuando: Se tiene alta carga transaccional Entonces: Espero que se obtengan estadÃ­sticos, con información relevante como TPS, cantidad de transacciones y porcentaje de error",,Criterio de aceptación,1140055,171 PB - Consulta de Productos - CarProductInquiry -> getCardProduct - Pruebas de Carga,,05/02/2025 18:31,17/02/2025 16:54
+1142851,Tribu API Canales y transaccional producto,software,Dado que Necesito garantizar la consistencia de la transaccion Cuando: Se tiene alta carga transaccional Entonces: Espero que se realicen pruebas con 20 hilos de procesamiento desde servicios del Bus,,Criterio de aceptación,1140055,171 PB - Consulta de Productos - CarProductInquiry -> getCardProduct - Pruebas de Carga,,05/02/2025 18:31,17/02/2025 16:54
+1142850,Tribu API Canales y transaccional producto,software,Dado que Necesito garantizar la consistencia de la transaccion Cuando: Se tiene alta carga transaccional Entonces: Espero que se realicen pruebas con 5 y/o 10 hilos de procesamiento desde servicios del Bus,,Criterio de aceptación,1140055,171 PB - Consulta de Productos - CarProductInquiry -> getCardProduct - Pruebas de Carga,,05/02/2025 18:31,17/02/2025 16:54
+1142849,Tribu API Canales y transaccional producto,software,"Dado que Necesito garantizar la consistencia de la transaccion Cuando: Se tiene alta carga transaccional Entonces: Espero que en caso de tener error, que exista un archivo aparte para validar mejor estos mensajes ",,Criterio de aceptación,1139940,171 SMP - Consulta de Productos - CarProductInquiry -> getCardProduct - Pruebas de carga,,05/02/2025 18:30,17/02/2025 16:54
+1142848,Tribu API Canales y transaccional producto,software,"Dado que Necesito garantizar la consistencia de la transaccion Cuando: Se tiene alta carga transaccional Entonces: Espero que se obtengan estadÃ­sticos, con información relevante como TPS, cantidad de transacciones y porcentaje de error",,Criterio de aceptación,1139940,171 SMP - Consulta de Productos - CarProductInquiry -> getCardProduct - Pruebas de carga,,05/02/2025 18:30,17/02/2025 16:54
+1142847,Tribu API Canales y transaccional producto,software,Dado que Necesito garantizar la consistencia de la transaccion Cuando: Se tiene alta carga transaccional Entonces: Espero que se realicen pruebas con 20 hilos de procesamiento desde servicios del Bus,,Criterio de aceptación,1139940,171 SMP - Consulta de Productos - CarProductInquiry -> getCardProduct - Pruebas de carga,,05/02/2025 18:30,17/02/2025 16:54
+1142846,Tribu API Canales y transaccional producto,software,Dado que Necesito garantizar la consistencia de la transaccion Cuando: Se tiene alta carga transaccional Entonces: Espero que se realicen pruebas con 5 y/o 10 hilos de procesamiento desde servicios del Bus,,Criterio de aceptación,1139940,171 SMP - Consulta de Productos - CarProductInquiry -> getCardProduct - Pruebas de carga,,05/02/2025 18:30,17/02/2025 16:54
+1142845,Tribu API Canales y transaccional producto,software,Identificación de mejoras en la vista,Dado que se va a realizar separación del alistamiento de la información cuando son dÃ­as de fines de semana y festivos entonces se debe validar que la generación del archivo cuando es mÃ¡s de un dÃ­a de procesamiento se mejore,Criterio de aceptación,1137130,TX Canales externos - Certificación de Vistas y Generación de Transacciones en Archivo Extract V2,,05/02/2025 18:17,
+1142812,Tribu API Canales y transaccional producto,software,Tratamiento contable de transacciones P2P y QR,"Dado que una transacción P2P o QR es recibida
+    Cuando se genera la contabilidad
+    Entonces ambas transacciones deben ser tratadas como QR a nivel contable
+    Y los campos 1 o 2 se deben generar respectivamente segÃºn tipo de cuenta en la misma posición para P2P y QR",Criterio de aceptación,1142807,Generar descripción ampliada y procesos batch diferenciada segÃºn tipo de transacción QR y P2P,,05/02/2025 17:56,14/02/2025 04:11
+1142811,Tribu API Canales y transaccional producto,software,Entrega de datos para Impacs y Savings,"Dado que una transacción P2P es recibida
+Cuando el archivo de movimientos es generado
+Entonces se debe enviar el signo de admiración ""!"" en el campo Canal
+Y se debe enviar ""Q009"" para dÃ©bito y ""Q010"" para crÃ©dito en el campo Id_Tx
+
+Dado que una transacción QR es recibida
+Cuando el archivo de movimientos es generado
+Entonces se debe seguir enviando el guion al piso ""_"" en el campo Canal
+Y se debe seguir enviando los valores establecidos en el campo Id_Tx",Criterio de aceptación,1142807,Generar descripción ampliada y procesos batch diferenciada segÃºn tipo de transacción QR y P2P,,05/02/2025 17:55,14/02/2025 04:10
+1142810,Tribu API Canales y transaccional producto,software,Información en el archivo Batch (extract) de transacciones QR y P2P,"Dado que una transacción QR Interoperable es recibida en el proceso Batch
+    Cuando el archivo de movimientos es generado
+    Entonces se debe recibir el signo de admiración ""!"" en la posición 375 del campo Canal para P2P
+    Y se debe seguir recibiendo el guion al piso ""_"" para QR
+    Y se debe recibir ""Q009"" para dÃ©bito y ""Q010"" para crÃ©dito en las posiciones 442 a 445 del campo Id_Tx para P2P
+    Y no debe haber afectación en las posiciones 442 a 445 del campo Id_Tx para QR",Criterio de aceptación,1142807,Generar descripción ampliada y procesos batch diferenciada segÃºn tipo de transacción QR y P2P,,05/02/2025 17:55,10/02/2025 22:22
+1142809,Tribu API Canales y transaccional producto,software,Modificación de la descripción ampliada para transacciones P2P y QR,"  Dado que una transacción es generada
+    Cuando la transacción es una Transferencia QR
+    Entonces la descripción debe ser cuando es enviada y recibida:
+
+""Transferencia con QR enviada al comercio XXXX el DD/MM/AAAA.""
+
+""Transferencia con QR comercio recibida desde YYYY el DD/MM/AAAA."" 
+
+Dado que una transacción es recibida Cuando la transacción es una Transferencia P2P Entonces la descripción debe ser cuando es enviada y recibida:
+
+""Transferencia con llave enviada a XXXX el DD/MM/AAAA.""  
+
+""Transferencia con llave recibida desde YYYY el DD/MM/AAAA.""",Criterio de aceptación,1142807,Generar descripción ampliada y procesos batch diferenciada segÃºn tipo de transacción QR y P2P,,05/02/2025 17:54,14/02/2025 04:11
+1142807,Tribu API Canales y transaccional producto,software,Generar descripción ampliada y procesos batch diferenciada segÃºn tipo de transacción QR y P2P,"Como Cliente del banco de BogotÃ¡
+  Quiero diferenciar entre transacciones QR normales y nuevas transacciones P2P
+  Para poder diferenciar en mi extracto",Historia No Funcional ( Habilitadora),1120291,Experiencia - Descripción ampliada para transacciones P2P- Proyecto Pagos Inmediatos (Breb),21,05/02/2025 17:52,20/02/2025 13:32
+1142716,Tribu API Canales y transaccional producto,software,EnvÃ­o del campo Canal para transacciones P2P,"Dado que una transacción P2P es recibida
+Cuando el campo Canal debe ser enviado
+Entonces se debe enviar el signo de admiración ""!"" en lugar del guion al piso ""_""",Criterio de aceptación,1142346,Diferenciación de transacciones QR y P2P,,05/02/2025 17:26,20/02/2025 13:23
+1142669,Tribu API Canales y transaccional producto,software,Reverso de transacción con código de procesamiento 401024   ,"Dado que una transacción de reverso con código de procesamiento 401024  es recibida
+    Cuando se genera una transacción de P2P y QR y se tiene una expresión regular obligatoria 
+    Entonces la transacción no debe tener una expresión fija y debe permitir el reverso de la transacción y no debe ser declinada",Criterio de aceptación,1142346,Diferenciación de transacciones QR y P2P,,05/02/2025 17:10,20/02/2025 13:23
+1142664,Tribu API Canales y transaccional producto,software,EnvÃ­o del archivo de movimientos para transacciones QR,"Dado que una transacción QR es recibida
+Cuando el archivo de movimientos es generado
+Entonces se debe seguir enviando el guion al piso ""_"" en la posición 375 del campo Canal
+Y no debe haber afectación en las posiciones 442 a 445 del campo Id_Tx",Criterio de aceptación,1142346,Diferenciación de transacciones QR y P2P,,05/02/2025 17:09,20/02/2025 13:23
+1142655,Tribu API Canales y transaccional producto,software,EnvÃ­o del archivo de movimientos para transacciones P2P,"Dado que una transacción P2P es recibida
+    Cuando el archivo de movimientos es generado
+    Entonces se debe enviar el signo de admiración ""!"" en la posición 375 del campo Canal
+    Y se debe enviar ""Q009"" para dÃ©bito y ""Q010"" para crÃ©dito en las posiciones 442 a 445 del campo Id_Tx",Criterio de aceptación,1142346,Diferenciación de transacciones QR y P2P,,05/02/2025 17:09,20/02/2025 13:23
+1142652,Tribu API Canales y transaccional producto,software,EnvÃ­o del campo Canal para transacciones QR,"Dado que una transacción QR es recibida
+    Cuando el campo Canal debe ser enviado
+    Entonces se debe seguir enviando el guion al piso ""_""",Criterio de aceptación,1142346,Diferenciación de transacciones QR y P2P,,05/02/2025 17:09,20/02/2025 13:23
+1142503,Tribu API Canales y transaccional producto,software,EnvÃ­o de transacciones QR al autorizador del banco,"Dado que una transacción QR es recibida
+    Cuando el campo P60 de la mensajerÃ­a base24 contiene el valor ""0842""
+    Entonces no debe haber afectación En los valores que hoy en dÃ­a se envÃ­an",Criterio de aceptación,1142346,Diferenciación de transacciones QR y P2P,,05/02/2025 16:22,20/02/2025 13:23
+1142492,Tribu API Canales y transaccional producto,software,EnvÃ­o de transacciones P2P al autorizador del banco,"Dado que una transacción P2P es recibida
+    Cuando el campo P60 de la mensajerÃ­a base24 contiene el valor ""0841""
+    Entonces se debe enviar en el campo Id_Tx (separador E0E2) el valor ""Q009"" para dÃ©bito y ""Q010"" para crÃ©dito",Criterio de aceptación,1142346,Diferenciación de transacciones QR y P2P,,05/02/2025 16:21,20/02/2025 13:23
+1142488,Tribu API Canales y transaccional producto,software,Recepción de transacciones QR y P2P,"Dado que una transacción QR Interoperable es recibida
+    Cuando el campo P60 de la mensajerÃ­a base24 contiene el valor ""0842""
+    Entonces la transacción debe ser identificada como una Transferencia QR
+
+Dado que una transacción P2P es recibida     Cuando el campo P60 de la mensajerÃ­a base24 contiene el valor ""0841""     Entonces la transacción debe ser identificada como una Transferencia P2P",Criterio de aceptación,1142346,Diferenciación de transacciones QR y P2P,,05/02/2025 16:21,20/02/2025 13:23
+1142470,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se validen al menos 2 transacciones exitosas en canal empresarial en convenio consolidado y detallado y comparar con tramas previas,,Criterio de aceptación,1137834,Optimización vistas transversales - PSP canales internos,,05/02/2025 16:14,13/02/2025 02:22
+1142469,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se envÃ­e un reverso y que baje al Extract como normalmente deberÃ­a bajar,,Criterio de aceptación,1137834,Optimización vistas transversales - PSP canales internos,,05/02/2025 16:14,13/02/2025 02:22
+1142468,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se validen al menos 2 transacciones exitosas en canal BM/BV en convenio consolidado y detallado y comparar con tramas previas,,Criterio de aceptación,1137834,Optimización vistas transversales - PSP canales internos,,05/02/2025 16:13,13/02/2025 02:22
+1142346,Tribu API Canales y transaccional producto,software,Diferenciación de transacciones QR y P2P,"Como usuario final del banco
+  Quiero diferenciar entre transacciones QR normales y nuevas transacciones P2P
+  Para que el banco pueda identificar y procesar correctamente las diferentes transacciones",Historia No Funcional ( Habilitadora),1120291,Experiencia - Descripción ampliada para transacciones P2P- Proyecto Pagos Inmediatos (Breb),21,05/02/2025 15:59,20/02/2025 13:23
+1142306,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se envÃ­en 2 reversos y que baje al Extract como normalmente deberÃ­a bajar,,Criterio de aceptación,1137845,Optimización vistas transversales - Transferencias y Pagos obligaciones Aval,,05/02/2025 15:51,13/02/2025 02:24
+1142305,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se validen al menos 2 transacciones exitosas en canal empresarial de Transferencia Aval,,Criterio de aceptación,1137845,Optimización vistas transversales - Transferencias y Pagos obligaciones Aval,,05/02/2025 15:51,13/02/2025 02:23
+1142304,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se validen al menos 2 transacciones exitosas en canal empresarial de Pago de obligación en distinto tipo de obligación,,Criterio de aceptación,1137845,Optimización vistas transversales - Transferencias y Pagos obligaciones Aval,,05/02/2025 15:51,13/02/2025 02:23
+1142303,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se validen al menos 2 transacciones exitosas en canal BM/BV de Transferencia Aval,,Criterio de aceptación,1137845,Optimización vistas transversales - Transferencias y Pagos obligaciones Aval,,05/02/2025 15:50,13/02/2025 02:23
+1142302,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se validen al menos 2 transacciones exitosas en canal BM/BV de Pago de obligación en distinto tipo de obligación,,Criterio de aceptación,1137845,Optimización vistas transversales - Transferencias y Pagos obligaciones Aval,,05/02/2025 15:50,13/02/2025 02:23
+1142294,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se valide que bajen los pagos al archivo de Pila,,Criterio de aceptación,1137836,Optimización vistas transversales - Pagos Pila canales internos,,05/02/2025 15:50,13/02/2025 02:23
+1142293,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se validen al menos 2 transacciones exitosas en canal empresarial en convenio consolidado y detallado y comparar con tramas previas,,Criterio de aceptación,1137836,Optimización vistas transversales - Pagos Pila canales internos,,05/02/2025 15:50,13/02/2025 02:23
+1142292,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se envÃ­e un reverso y que baje al Extract como normalmente deberÃ­a bajar,,Criterio de aceptación,1137836,Optimización vistas transversales - Pagos Pila canales internos,,05/02/2025 15:49,13/02/2025 02:23
+1142289,Tribu API Canales y transaccional producto,software,Dado que: Se optimizaron vistas de normalización Cuando: Es transversal a todos los canales Entonces: Espero que se validen al menos 2 transacciones exitosas en canal BM/BV en convenio consolidado y detallado y comparar con tramas previas,,Criterio de aceptación,1137836,Optimización vistas transversales - Pagos Pila canales internos,,05/02/2025 15:49,13/02/2025 02:22
+1142071,Tribu API Canales y transaccional producto,software,Validar que las transacciones modificadas en el filtro ya no sean procesadas en el switch anterior Autra,"Dado que el total de transacciones ya no debe procesarse por el switch anterior Autra
+  Cuando se procesa una transacción
+  Entonces la transacción no debe ser procesada por el switch anterior Autra",Criterio de aceptación,1141642,Modificación de filtro salida a producción - Corresponsales,,05/02/2025 14:47,19/02/2025 23:33
+1142061,Tribu API Canales y transaccional producto,software,Bajada de transacciones en procesos batch,"Dado que las transacciones deben ser bajadas en los procesos batch
+  Cuando se realiza un proceso batch
+  Entonces las transacciones deben ser incluidas en el proceso batch
+",Criterio de aceptación,1141642,Modificación de filtro salida a producción - Corresponsales,,05/02/2025 14:43,19/02/2025 23:33
+1142058,Tribu API Canales y transaccional producto,software,Enrutamiento de transacciones de Corresponsales,"Dado que las transacciones de Corresponsales deben enrutarse al nuevo switch capa de integración
+  Cuando se procesa una transacción de Corresponsales
+  Entonces la transacción debe ser enrutada al nuevo switch capa de integración
+
+{{la transacción debe ser enviada al autorizador a travÃ©s de la capa de integración}}",Criterio de aceptación,1141642,Modificación de filtro salida a producción - Corresponsales,,05/02/2025 14:42,19/02/2025 23:33
+1141843,Capa de Integración V2,software,No afectación,,Criterio de aceptación,1123653,AWS - Error validacion de tipo de documento,,05/02/2025 11:45,19/02/2025 19:54
+1141841,Tribu API Canales y transaccional producto,software, Modificación del filtro transaccional para salida a producción,"Dado que las transacciones de Corresponsales deben enrutarse al nuevo switch capa de integración
+  Y las transacciones del canal deben enrutarse a la capa de integración  
+  Cuando se solicite el filtro transaccional de producción 
+ Entonces se deben configurar todas las transacciones de corresponsalÃ­a  caras (mixta, dÃ©bito y crÃ©dito) para que sean procesadas por Capa 
+
+solo exceptuando pago de TC como PSP",Criterio de aceptación,1141642,Modificación de filtro salida a producción - Corresponsales,,05/02/2025 11:45,
+1141840,Capa de Integración V2,software,Dado que se consuma el recurso de campaÃ±as.Cuando se consulte una campaÃ±a con tipo de documento CE. Entonces se debe obtener campaÃ±as,,Criterio de aceptación,1123653,AWS - Error validacion de tipo de documento,,05/02/2025 11:44,19/02/2025 19:54
+1141839,Capa de Integración V2,software,Dado que se consuma el recurso de campaÃ±as.Cuando se consulte una campaÃ±a con tipo de documento C. Entonces se debe obtener respuesta badRequest,,Criterio de aceptación,1123653,AWS - Error validacion de tipo de documento,,05/02/2025 11:44,19/02/2025 19:54
+1141838,Capa de Integración V2,software,Dado que se consuma el recurso de campaÃ±as.Cuando se consulte una campaÃ±a con tipo de documento CC. Entonces se debe obtener campaÃ±as,,Criterio de aceptación,1123653,AWS - Error validacion de tipo de documento,,05/02/2025 11:43,19/02/2025 19:54
+1141836,Tribu API Canales y transaccional producto,software,Revisión desde la Base de datos para las vistas,"Dado que se tienen diferentes vistas cuando se realizan pruebas en lÃ­nea desde los diferentes canales entonces se debe validar en la base de datos que la información baje de acuerdo al nodo por donde ingreso la información:
+
+
+
+Vista 1 - Credibanco y Cajeros - Bajan las del Nodo Singe (vista hacia el autorizador) (1)
+
+Resto de vistas 2 a la 10 - Bajan la del Nodo Source (Vista adquiriente) (0)
+
+!image-20250205-163948.png|width=653,height=176,alt=""image-20250205-163948.png""!",Criterio de aceptación,1137130,TX Canales externos - Certificación de Vistas y Generación de Transacciones en Archivo Extract V2,,05/02/2025 11:43,13/02/2025 23:21
+1141793,Capa de Integración V2,software,"DAdo que se consuma el agregador. Cuando se envÃ­e el datasource ""ExternalCreditBureau"" y en el payload no se envie el valor de lastname. Entonces se debe recibir respuestarechazar la peticion con HTTP_400 badrequest",,Criterio de aceptación,1125617,AWS - BadRequest on DataSource Datacredito,,05/02/2025 11:31,19/02/2025 21:05
+1141785,Capa de Integración V2,software,"DAdo que se consuma el agregador. Cuando se envÃ­e el datasource ""ExternalCreditBureau"" y y no se envie payload. Entonces se debe recibir respuestarechazar la peticion con HTTP_400 badrequest",,Criterio de aceptación,1125617,AWS - BadRequest on DataSource Datacredito,,05/02/2025 11:28,19/02/2025 21:05
+1141783,Capa de Integración V2,software,"DAdo que se consuma el agregador. Cuando se envÃ­e el datasource ""ExternalCreditBureau"" y LastName con un valor vacio. Entonces se debe recibir respuestarechazar la peticion con HTTP_400 badrequest",,Criterio de aceptación,1125617,AWS - BadRequest on DataSource Datacredito,,05/02/2025 11:28,19/02/2025 21:05
+1141778,Capa de Integración V2,software,"DAdo que se consuma el agregador. Cuando se envÃ­e el datasource ""ExternalCreditBureau"" y LastName con un valor. Entonces se debe recibir respuesta",,Criterio de aceptación,1125617,AWS - BadRequest on DataSource Datacredito,,05/02/2025 11:28,19/02/2025 21:05
+1141691,Tribu API Canales y transaccional producto,software,Generación de transacciones con fecha contable del siguiente dÃ­a hÃ¡bil,"Dado las transacciones se procesan en lÃ­nea algunas pueden llegar con fecha next day
+Cuando el archivo extract se genera
+ Entonces el archivo extract no debe incluir estas transacciones con la fecha contable del siguiente dÃ­a hÃ¡bil (next day), sino hasta el dÃ­a contable correspondiente.",Criterio de aceptación,1137130,TX Canales externos - Certificación de Vistas y Generación de Transacciones en Archivo Extract V2,,05/02/2025 11:01,13/02/2025 23:21
+1141689,Tribu API Canales y transaccional producto,software,Generación de transacciones con fecha contable del dÃ­a actual,"Dado las transacciones se procesan en lÃ­nea
+ Cuando el archivo extract se genera
+ Entonces el archivo extract debe incluir el total de transacciones con la fecha contable del dÃ­a actual (current)",Criterio de aceptación,1137130,TX Canales externos - Certificación de Vistas y Generación de Transacciones en Archivo Extract V2,,05/02/2025 11:01,13/02/2025 23:21
+1141685,Tribu API Canales y transaccional producto,software,Formato de certificación del archivo extract,Dado que se realizaron las regresiones de forma exitosa cuando se realizaron las pruebas desde los diferentes canales entonces se debe revisar que el formato extract no haya cambiado con respecto a certificaciones anteriores.,Criterio de aceptación,1137130,TX Canales externos - Certificación de Vistas y Generación de Transacciones en Archivo Extract V2,,05/02/2025 11:00,13/02/2025 23:21
+1141651,Capa de Integración V2,software,"Dado que se consuma el recurso ""/customer - POST"" Cuando se enviÃ© data valida y falle por timeout el backend. Entonces se debe obtener respuesta por timeout y validar logs queden correctamente",,Criterio de aceptación,1098810,AWS - Migracion Node 14 a Node 20 API customer-management-create-v3-lbda,,05/02/2025 10:48,18/02/2025 13:24
+1141644,Capa de Integración V2,software,"Dado que se consuma el recurso ""/customer - POST"" Cuando se enviÃ© data valida y falle tecnicamente el backend. Entonces se debe obtener respuesta por error tecnico y validar logs queden correctamente",,Criterio de aceptación,1098810,AWS - Migracion Node 14 a Node 20 API customer-management-create-v3-lbda,,05/02/2025 10:46,18/02/2025 13:24
+1141472,Capa de Integración V2,software,Reporte Grafana,,Criterio de aceptación,1108936,AWS - API Saldos - Implementar Consulta Saldos Tarjeta Credito,,05/02/2025 09:49,18/02/2025 13:18
+1141471,Capa de Integración V2,software,Reporte Grafana,,Criterio de aceptación,1108940,AWS - API Saldos - Implementar Consulta Saldos Grupal,,05/02/2025 09:49,19/02/2025 19:29
+1141470,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo grupal. Entonces se debe obtener respuesta del backend principal HTTP_500",,Criterio de aceptación,1108940,AWS - API Saldos - Implementar Consulta Saldos Grupal,,05/02/2025 09:49,19/02/2025 19:29
+1141469,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo grupal  y presente demoras el backend. Entonces se debe obtener respuesta  HTTP_408",,Criterio de aceptación,1108940,AWS - API Saldos - Implementar Consulta Saldos Grupal,,05/02/2025 09:49,19/02/2025 19:29
+1141467,Capa de Integración V2,software,"Dado que se consuma el api de saldos , Cuando se consulte el saldo grupal. Entonces se debe obtener respuesta HTTP_400",,Criterio de aceptación,1108940,AWS - API Saldos - Implementar Consulta Saldos Grupal,,05/02/2025 09:48,19/02/2025 19:29
+1141465,Capa de Integración V2,software,"Dado que se consuma el api de saldos , Cuando se consulte el saldo grupal. Entonces se debe obtener respuesta HTTP_409",,Criterio de aceptación,1108940,AWS - API Saldos - Implementar Consulta Saldos Grupal,,05/02/2025 09:48,19/02/2025 19:29
+1141460,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo grupal. Entonces se debe obtener respuesta del backend principal HTTP_200",,Criterio de aceptación,1108940,AWS - API Saldos - Implementar Consulta Saldos Grupal,,05/02/2025 09:48,19/02/2025 19:29
+1141453,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo TC. Entonces se debe obtener respuesta del backend principal HTTP_500",,Criterio de aceptación,1108936,AWS - API Saldos - Implementar Consulta Saldos Tarjeta Credito,,05/02/2025 09:45,18/02/2025 13:17
+1141452,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo TC y presente demoras el backend. Entonces se debe obtener respuesta  HTTP_408",,Criterio de aceptación,1108936,AWS - API Saldos - Implementar Consulta Saldos Tarjeta Credito,,05/02/2025 09:44,18/02/2025 13:17
+1141451,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo de TC. Entonces se debe obtener respuesta HTTP_400",,Criterio de aceptación,1108936,AWS - API Saldos - Implementar Consulta Saldos Tarjeta Credito,,05/02/2025 09:44,18/02/2025 13:17
+1141450,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo de TC. Entonces se debe obtener respuesta HTTP_409",,Criterio de aceptación,1108936,AWS - API Saldos - Implementar Consulta Saldos Tarjeta Credito,,05/02/2025 09:43,18/02/2025 13:17
+1141449,Capa de Integración V2,software,"Dado que se consuma el api de saldos, Cuando se consulte el saldo de TC. Entonces se debe obtener respuesta del backend principal HTTP_200",,Criterio de aceptación,1108936,AWS - API Saldos - Implementar Consulta Saldos Tarjeta Credito,,05/02/2025 09:43,18/02/2025 13:17
+1141268,Capa de Integración V2,software,DADO QUE se recibe un consumo a DP CUANDO se quiere ir a CRM ENTONCES se debe generar el mensaje de auditoria y publicarlo en la cola,,Criterio de aceptación,1140171,Datapower -Generacion XML para la generacion de auditoria del backend.siebel.routing,,05/02/2025 08:44,11/02/2025 14:05
+1141130,Tribu API Canales y transaccional producto,software,148 - Cambio de clave - Cajeros - Desarrollo de unificacion y ordenamiento (4 Archivos Novedades),"Yo Como: Switch Transaccional
+
+Necesito: Que se realice la novedad de cambio de clave en cajeros
+
+Para: Que los clientes puedan realizar esta novedad sin inconvenientes
+
+
+
+FOCO: Que se unifiquen los archivos de novedades generados en Capa y Autra para que sean transmitidos hacia Opencard y Sistema Gestión Gremial",Historia No Funcional ( Habilitadora),1150497,148 - Cambio de clave - Cajeros,8,05/02/2025 07:42,05/03/2025 18:22
+1141078,Capa de Integración V2,software,Verificación de cargue de plantilla Recfon_Bbta,"*Dado:* que se ingrese a Latinia.
+
+*Cuando:* se cargue la plantilla sms Recfon_Bbta
+
+*Entonces:* se debe enviar los sms con la notificación de los dÃ©bitos exitosos que se realicen de los recaudos de fondos.",Criterio de aceptación,1141076,LATINIA - Cargue plantilla sms Recfon_Bbta,,04/02/2025 20:12,14/02/2025 03:08
+1141076,Capa de Integración V2,software,LATINIA - Cargue plantilla sms Recfon_Bbta,"*Yo Como:* Cliente empresarial.
+
+*Quiero:* Que se envie un sms a los clientes con cuentas del banco cuando se les realicen dÃ©bitos de recaudos de fondos.
+
+*Para:*  que sean informados por medio de notificaciones sms de los dÃ©bitos exitosos.
+
+*Detalles Adicionales:*
+
+Insumos de Correo: *RE: Dependencia CMPLMNTRS-1293*
+
+{color:#36b37e}*Información e Insumo de Solución:*{color}
+
+*Se carga en ambiente QA*
+
+Grupo:                                   Cash Managment
+Nombre:                                RECFON Bbta
+Referencia:		              Recfon_Bbta
+Nombre de archivo:               No tiene, es un mensaje plano SMS
+
+
+
+Mensaje
+
+Banco de BogotÃ¡: Debitamos ${Valor} de tu Cta {Tipo_Cta} *${No_Cta} por pago programado de ${Empresa}. Â¿Dudas?, comunÃ­cate con el comercio (${Fecha})",Historia,1141072,Crecimiento - Parametrizar la plantilla sms para el envio de las notificaciones de RECFON internos,1,04/02/2025 19:56,14/02/2025 03:26
+1140968,Tribu API Canales y transaccional producto,software,Notificación de activación a monitor plus,"Dado que he activado mi tarjeta dÃ©bito
+â€¢	  Cuando la activación es procesada
+â€¢	  Entonces se debe enviar una notificación de activación hacia monitor plus por medio de la trama Ãºnica",Criterio de aceptación,1140922,TX 154 Activación de la Tarjeta DÃ©bito desde canales digitales,,04/02/2025 17:07,20/02/2025 13:47
+1140967,Tribu API Canales y transaccional producto,software,Sincronización con el switch Autra,"â€¢	  Dado que he activado mi tarjeta dÃ©bito
+â€¢	  Cuando la activación es procesada
+â€¢	  Entonces se debe realizar la sincronización del envÃ­o de activación con el switch Autra
+",Criterio de aceptación,1140922,TX 154 Activación de la Tarjeta DÃ©bito desde canales digitales,,04/02/2025 17:07,20/02/2025 13:47
+1140966,Tribu API Canales y transaccional producto,software,Notificación de activación a AVC,"Dado que he activado mi tarjeta dÃ©bito
+â€¢	  Cuando la activación es procesada
+â€¢	  Entonces se debe generar un mensaje 320 de notificación hacia AVC",Criterio de aceptación,1140922,TX 154 Activación de la Tarjeta DÃ©bito desde canales digitales,,04/02/2025 17:07,20/02/2025 13:47
+1140964,Tribu API Canales y transaccional producto,software,Sincronización de activación entre lÃ­neas del switch,"Dado que he activado mi tarjeta dÃ©bito
+â€¢	  Cuando la activación es procesada
+â€¢	  Entonces la activación debe estar sincronizada entre las dos lÃ­neas del switch capa de integración",Criterio de aceptación,1140922,TX 154 Activación de la Tarjeta DÃ©bito desde canales digitales,,04/02/2025 17:07,20/02/2025 13:47
+1140963,Tribu API Canales y transaccional producto,software,Cambio de clave obligatorio,"Dado que he activado mi tarjeta dÃ©bito
+â€¢	  Cuando intento realizar una transacción sin cambiar la clave (Este esta relacionado a otro servicio)
+â€¢	  Entonces debo recibir un mensaje indicando que debo cambiar la clave primero",Criterio de aceptación,1140922,TX 154 Activación de la Tarjeta DÃ©bito desde canales digitales,,04/02/2025 17:06,20/02/2025 13:47
+1140962,Tribu API Canales y transaccional producto,software,Tarjeta ya asignada a otro cliente,"â€¢	Dado que la tarjeta ya estÃ¡ asignada a otro cliente
+â€¢	  Cuando solicito la activación de mi tarjeta dÃ©bito
+â€¢	  Entonces debo recibir un mensaje de error indicando que la tarjeta ya pertenece a otro cliente",Criterio de aceptación,1140922,TX 154 Activación de la Tarjeta DÃ©bito desde canales digitales,,04/02/2025 17:06,20/02/2025 13:47
+1140961,Tribu API Canales y transaccional producto,software,Tarjeta no existe en el full de tarjetas,"Dado que la tarjeta no existe en el full de tarjetas dÃ©bito
+Cuando solicito la activación de mi tarjeta dÃ©bito
+Entonces debo recibir un mensaje de error indicando que la tarjeta no existe en el full de tarjetas que tiene el switch",Criterio de aceptación,1140922,TX 154 Activación de la Tarjeta DÃ©bito desde canales digitales,,04/02/2025 17:06,20/02/2025 13:47
+1140955,Tribu API Canales y transaccional producto,software,Activación de tarjeta dÃ©bito para cliente nuevo o antiguo,"Dado que se puede realizar una activación de una tarjeta dÃ©bito a un cliente nuevo o un cliente antiguo del banco
+  Y el cliente tiene una cuenta de ahorros o corriente asignada
+  Y la tarjeta dÃ©bito estÃ¡ en estado ""no reclamada"" 
+  Y la tarjeta existe en el full de tarjetas dÃ©bito como anónima (Estado E no reclamada) Código 56 o 62 P validar 
+  Cuando se solicita la activación de la tarjeta dÃ©bito
+  Entonces la tarjeta debe ser asignada a la cuenta del cliente
+  Y la tarjeta debe pasar a estado ""activo"" En portal Hold response code 
+  Y el cliente debe recibir se tarjeta en estado activo
+  Y el cliente debe cambiar la clave de la tarjeta antes de realizar otras operaciones para que quede en uso (esto aplica en otro servicio) Si esta operación el Card status sigue en estado inactivo",Criterio de aceptación,1140922,TX 154 Activación de la Tarjeta DÃ©bito desde canales digitales,,04/02/2025 17:03,20/02/2025 13:46
+1140922,Tribu API Canales y transaccional producto,software,TX 154 Activación de la Tarjeta DÃ©bito desde canales digitales,"Como cliente del banco de BogotÃ¡
+Quiero activar mi nueva tarjeta dÃ©bito
+Para poder utilizarla en mis transacciones diarias",Historia No Funcional ( Habilitadora),1150552,154 - Activación Tarjeta Debito -  Bus,13,04/02/2025 16:54,20/02/2025 13:48
+1140867,Capa de Integración V2,software,Consumo servicio API secundaryAuthenticationMethodManagement ,"*Dado*: Que se exponga el servicio API secundaryAuthenticationMethodManagement en DATAPOWER Interno incluyendo el campo Message
+
+*Cuando*: Se realice una prueba de consumo del servicio de DP
+
+*Entonces*: Se debe evidenciar algÃºn resultado exitos/error de negocio del consumo de la API secundaryAuthenticationMethodManagement para sus recursos *GET /V2/Utilities/otp/validate* - Validar OTP - V2 y *POST /V2/Utilities/otp/send* - Generar y enviar OTP - V2",Criterio de aceptación,1140864,Datapower - Virtualización DP Interno/Externo de la API secundaryAuthenticationMethodManagement inclusión campo Message,,04/02/2025 16:44,14/02/2025 03:00
+1140866,Capa de Integración V2,software,Validación consumo de ARGUS para la obtención de APIKEY del servicio API secundaryAuthenticationMethodManagement,"*Dado*: Que se exponga el servicio API secundaryAuthenticationMethodManagement en DATAPOWER Interno
+
+*Cuando*: Este este en estado UP.
+
+*Entonces*: Adjuntar evidencias del consumo de ARGUS y sus llaves respectivas para la obtención del API KEY del servicio API secundaryAuthenticationMethodManagement",Criterio de aceptación,1140864,Datapower - Virtualización DP Interno/Externo de la API secundaryAuthenticationMethodManagement inclusión campo Message,,04/02/2025 16:44,14/02/2025 03:00
+1140865,Capa de Integración V2,software,Exposición servicio API secundaryAuthenticationMethodManagement en DATAPOWER Interno-Externo,"*Dado*: Que se exponga el servicio API secundaryAuthenticationMethodManagement en DATAPOWER Interno-Externo
+
+*Cuando*: Este este en estado UP.
+
+*Entonces*: Adjuntar evidencias del objeto con su respectivo estado.",Criterio de aceptación,1140864,Datapower - Virtualización DP Interno/Externo de la API secundaryAuthenticationMethodManagement inclusión campo Message,,04/02/2025 16:44,14/02/2025 03:00
+1140864,Capa de Integración V2,software,Datapower - Virtualización DP Interno/Externo de la API secundaryAuthenticationMethodManagement inclusión campo Message,"*Yo como:* Usuario de BancaMovil/BancaVirtual
+
+*Quiero:* Virtualizar en DP Interno/Externo de la API secundaryAuthenticationMethodManagement
+
+*Para:* Consumir los recursos *GET /V2/Utilities/otp/validate* - Validar OTP - V2 y *POST /V2/Utilities/otp/send* - Generar y enviar OTP - V2 (con la inclusión del campo Message) y estos puedan ser usados como remplazo del OTP Manager y Digipass
+
+*Detalles Adicionales:*
+
+Documentación backend: [https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1973354613/API+secondaryAuthenticationMethodManagement+Private|https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1973354613/API+secondaryAuthenticationMethodManagement+Private|smart-link]
+
+Documentación de cambios: [https://bancodebogotaconfluence.atlassian.net/wiki/spaces/DAPTASK/pages/3866919772/Reemplazo+OTP+Manager+y+Digipass+Multicanal+para+flujo+de+env+o+de+otp+v+a+sms|https://bancodebogotaconfluence.atlassian.net/wiki/spaces/DAPTASK/pages/3866919772/Reemplazo+OTP+Manager+y+Digipass+Multicanal+para+flujo+de+env+o+de+otp+v+a+sms|smart-link]*Información APIKEY:*
+
+*_QA/STAGING:_*
+
+* Application: AWSCommonsÂ 
+* QueryId: APIKEYAWSCOMMONS
+
+*_PRODUCCIÃ“N:_*
+
+* Application: AWSCommonsÂ 
+* QueryId: APIKEYAWSCOMMONS
+
+API endpoint Transit:
+
+QA:
+[https://tvs.aws.digitalbdbqa.net/identity|https://tvs.aws.digitalbdbqa.net/identity]
+
+Staging:
+[https://tvs-staging.aws.digitalbdbqa.net|https://tvs-staging.aws.digitalbdbqa.net/]
+
+Producción:
+[https://tvs.aws.digitalbdb.net|https://tvs.aws.digitalbdb.net/]
+
+Realizar el versionamiento de los desarrollos bajo la siguiente HU: [https://bancodebogota.atlassian.net/browse/MANG-11275|https://bancodebogota.atlassian.net/browse/MANG-11275|smart-link] 
+
+Endpoints consumo DP:
+
+QA:
+
+[http://10.86.154.119:4577/identity/secondary-authentication-method/V2/Utilities/otp/send|http://10.86.154.119:4577/identity/secondary-authentication-method/V2/Utilities/otp/send]
+[http://10.86.154.119:4577/identity/secondary-authentication-method/V2/Utilities/otp/validate|http://10.86.154.119:4577/identity/secondary-authentication-method/V2/Utilities/otp/validate]
+
+Staging:
+
+[http://10.86.154.122:4577/identity/secondary-authentication-method/V2/Utilities/otp/send|http://10.86.154.122:4577/identity/secondary-authentication-method/V2/Utilities/otp/send]
+[http://10.86.154.122:4577/identity/secondary-authentication-method/V2/Utilities/otp/validate|http://10.86.154.122:4577/identity/secondary-authentication-method/V2/Utilities/otp/validate]
+
+PRD:
+
+[http://10.89.2.31:4577/identity/secondary-authentication-method/V2/Utilities/otp/send|http://10.89.2.31:4577/identity/secondary-authentication-method/V2/Utilities/otp/send]
+[http://10.89.2.31:4577/identity/secondary-authentication-method/V2/Utilities/otp/validate|http://10.89.2.31:4577/identity/secondary-authentication-method/V2/Utilities/otp/validate]",Historia No Funcional ( Habilitadora),598913,"Modernización - Api V2para generación, envÃ­o y validación OTP",3,04/02/2025 16:44,14/02/2025 03:01
+1140728,Capa de Integración V2,software,Invocación servicio TokenInquiryManagementV2 - setSendOTP con resultado de error tÃ©cnico.,"*Dado:* Que se invoque el servicio TokenInquiryManagementV2 - setSendOTP desde Banca Virtual o Banca Móvil.
+
+*Cuando:* Este responda un resultado de error tÃ©cnico.
+
+*Entonces:* Este debe retornar un error tÃ©cnico en Backend CRM/ATH/Api o de BUS.",Criterio de aceptación,1140725,Broker - Actualización Controller TokenInquiryManagementV2 - setSendOTP consumo API secondaryAuthenticationMethodManagement inclusión campo Message,,04/02/2025 16:19,14/02/2025 02:53
+1140727,Capa de Integración V2,software,Invocación servicio TokenInquiryManagementV2 - setSendOTP con resultado de error de negocio.,"*Dado:* Que se invoque el servicio TokenInquiryManagementV2 - setSendOTP desde Banca Virtual o Banca Móvil.
+
+*Cuando:* Este responda un resultado de error de negocio (StatusCode - Error genÃ©rico 100).
+
+*Entonces:* Este debe retornar un error de negocio al enviar un nuevo OTP.",Criterio de aceptación,1140725,Broker - Actualización Controller TokenInquiryManagementV2 - setSendOTP consumo API secondaryAuthenticationMethodManagement inclusión campo Message,,04/02/2025 16:19,14/02/2025 02:53
+1140726,Capa de Integración V2,software,Invocación servicio TokenInquiryManagementV2 - setSendOTP con resultado exitoso.,"*Dado:* Que se invoque el servicio TokenInquiryManagementV2 - setSendOTP desde Banca Virtual o Banca Móvil.
+
+*Cuando:* Este responda exitoso (StatusCode = '0').
+
+*Entonces:* Este debe enviar un nuevo OTP a travÃ©s de un SMS al telÃ©fono del cliente registrado en CRM ó hace el envÃ­o por medio de una notificación parametrizada.",Criterio de aceptación,1140725,Broker - Actualización Controller TokenInquiryManagementV2 - setSendOTP consumo API secondaryAuthenticationMethodManagement inclusión campo Message,,04/02/2025 16:19,14/02/2025 02:53
+1140725,Capa de Integración V2,software,Broker - Actualización Controller TokenInquiryManagementV2 - setSendOTP consumo API secondaryAuthenticationMethodManagement inclusión campo Message,"*Yo como:* Usuario de BancaMovil/BancaVirtual
+
+*Quiero:* Realizar la actualización del servicio TokenInquiryManagementV2 - setSendOTP
+
+*Para:* Reemplazar el consumo de las conexiones hacia OTP Manager, Digipass Multicanal y servicio de envÃ­o de sms de ATH por el nuevo consumo del mÃ©todo *POST /V2/Utilities/otp/send* - Generar y enviar OTP - V2 de la API *_secondaryAuthenticationMethodManagement_* incluyendo el campo Message
+
+*Detalles Adicionales:*
+
+Documentación backend: [https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1973354613/API+secondaryAuthenticationMethodManagement+Private|https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/1973354613/API+secondaryAuthenticationMethodManagement+Private|smart-link]
+
+Documentación de cambios: [https://bancodebogotaconfluence.atlassian.net/wiki/spaces/DAPTASK/pages/3866919772/Reemplazo+OTP+Manager+y+Digipass+Multicanal+para+flujo+de+env+o+de+otp+v+a+sms|https://bancodebogotaconfluence.atlassian.net/wiki/spaces/DAPTASK/pages/3866919772/Reemplazo+OTP+Manager+y+Digipass+Multicanal+para+flujo+de+env+o+de+otp+v+a+sms|smart-link]
+
+Versionar los desarrollos en la siguiente rama de la HU [https://bancodebogota.atlassian.net/browse/MANG-11273|https://bancodebogota.atlassian.net/browse/MANG-11273|smart-link] 
+
+{color:#006644}*Información e Insumo de Solución:*{color} 
+
+Documento de pruebas tÃ©cnicas de la HNF: [PT-MANG-17247-Broker - Actualización Controller TokenInquiryManagementV2 - setSendOTP inclusión campo Message.docx|https://bancodebogota.sharepoint.com/:w:/r/sites/VdSySC/TI%26APIS/Documentos%20compartidos/Informaci%C3%B3n%20por%20Squad/Integraci%C3%B3n%20con%20Aval,%20Terceros%20y%20Proyectos/Pruebas%20T%C3%A9cnicas%20-%20HNF/PT-MANG-17247-Broker%20-%20Actualizaci%C3%B3n%20Controller%20TokenInquiryManagementV2%20-%20setSendOTP%20inclusi%C3%B3n%20campo%20Message.docx?d=w984c722e891e4a1c850ffdfbbcf6561d&csf=1&web=1&e=CoolRX]",Historia No Funcional ( Habilitadora),598913,"Modernización - Api V2para generación, envÃ­o y validación OTP",5,04/02/2025 16:19,14/02/2025 02:53
+1140601,Capa de Integración V2,software,"Dado que se consuma el API MasterDAtaManagement Private. Cuando se consuma el recurso ""/V1/Utilities/mdm/allies - GET"". Con data Valida se debe obtener HTTP 200, respuesta y validar logs con estructura correcta.","*Dado*: Que se consuma el API MasterDAtaManagement Private.
+
+*Cuando*: Se consuma el recurso ""/V1/Utilities/mdm/allies - GET"" con data valida.
+
+*Entonces*: Se debe obtener HTTP 200, respuesta y validar logs con estructura correcta.",Criterio de aceptación,1140592,AWS - API MasterDataManagement implementación consumo REDIS,,04/02/2025 16:00,14/02/2025 03:06
+1140600,Capa de Integración V2,software,"Dado que se consuma el API MasterDAtaManagement Private. Cuando se consuma el recurso ""/V1/Utilities/mdm/allOffices - GET"". Con data Valida se debe obtener HTTP 200, respuesta y validar logs con estructura correcta.","*Dado*: Que se consuma el API MasterDAtaManagement Private.
+
+*Cuando*: Se consuma el recurso ""/V1/Utilities/mdm/allOffices - GET"" con data valida.
+
+*Entonces*: Se debe obtener HTTP 200, respuesta y validar logs con estructura correcta.",Criterio de aceptación,1140592,AWS - API MasterDataManagement implementación consumo REDIS,,04/02/2025 16:00,14/02/2025 03:06
+1140599,Capa de Integración V2,software,"Dado que se consuma el API MasterDAtaManagement Private. Cuando se consuma el recurso ""/V1/Utilities/mdm/offices - GET"". Con data Valida se debe obtener HTTP 200, respuesta y validar logs con estructura correcta.","*Dado*: Que se consuma el API MasterDAtaManagement Private.
+
+*Cuando*: Se consuma el recurso ""/V1/Utilities/mdm/offices - GET"" con data valida.
+
+*Entonces*: Se debe obtener HTTP 200, respuesta y validar logs con estructura correcta.",Criterio de aceptación,1140592,AWS - API MasterDataManagement implementación consumo REDIS,,04/02/2025 16:00,14/02/2025 03:06
+1140592,Capa de Integración V2,software,AWS - API MasterDataManagement implementación consumo REDIS,"Yo como Usuario de la Api MasterDAtaManagement Private
+
+Quiero se realice  la implementación de consumo a REDIS de la API  MasterDataManagement
+
+Para dar solución a los problemas presentados en los recuros: {{offices, allOffices y allies}}
+
+Documentación API: [https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/2167047903/API+MasteDataManagement+Private+TVS|https://bancodebogotaconfluence.atlassian.net/wiki/spaces/LABDIGITAL/pages/2167047903/API+MasteDataManagement+Private+TVS|smart-link] 
+
+Recursos afectados
+
+[default|https://swaggeruiapp.herokuapp.com/v1/swagger#/default]
+
+* {{/V1/Utilities/mdm/offices}} - GET
+* {{/V1/Utilities/mdm/allOffices}} - GET
+* {{/V1/Utilities/mdm/allies}} - GET
+
+Realizar el versionamiento sobre la HU: [https://bancodebogota.atlassian.net/browse/MANG-15652|https://bancodebogota.atlassian.net/browse/MANG-15652|smart-link] 
+
+*Solucion:* 
+*Evidencias recursos*:
+[MANG-15652 Pruebas QA Api MasteDataManagementPrivate.docx|https://bancodebogota.sharepoint.com/:w:/r/sites/VdSySC/TI%26APIS/Documentos%20compartidos/Informaci%C3%B3n%20por%20Squad/Integraci%C3%B3n%20con%20Aval,%20Terceros%20y%20Proyectos/Pruebas%20T%C3%A9cnicas%20-%20HNF/MANG-15652%20Pruebas%20QA%20Api%20MasteDataManagementPrivate.docx?d=w3517029545ed49119efbdf63b9f6a2ee&csf=1&web=1&e=iG2wVA]",Historia No Funcional ( Habilitadora),918350,Sostenibilidad - APIs Transversales - Migración node 14 a 20,5,04/02/2025 15:59,14/02/2025 03:06
+1140320,Tribu API Canales y transaccional producto,software,Realizar la notificación del cambio de clave hacia Monitor Plus,"Dado que se realizó el cambio de clave de forma correcta 
+
+cuando el cliente realiza el proceso desde el canal cajero
+
+entonces se debe enviar la notificación a travÃ©s de trama Ãºnica a Monitor PLus. ",Criterio de aceptación,1138738,TX 148 - Migración de Transacción de Cambio de Clave de Tarjeta DÃ©bito desde cajero automÃ¡tico V2,,04/02/2025 15:11,
+1140237,Capa de Integración V2,software,DADO QUE DP publica en mensaje en la cola inicial del Flujo CUANDO es usado el componente backend.siebel.route ENTONCES se debe escribir un log con la información recibida,,Criterio de aceptación,1140160,Broker - Ajuste ADP Auditoria para soportar XML del Backend.siebel.routing,,04/02/2025 15:00,17/02/2025 20:05
+1140090,Tribu API Canales y transaccional producto,software,171 - Consulta de Productos - InterventorÃ­a y Certificación Front Parte 2,"Yo como: Cliente Banco de BogotÃ¡
+
+Quiero: Visualizar mis tarjetas dÃ©bito y crÃ©dito en los distintos canales (PB, SMP, IVR, OFC, AGV, LIV, BEP)
+
+Para: Revisar el estado de mis productos en los distintos canales y acceder al mismo
+
+
+
+FOCO: Culminar labores de interventorÃ­a y certificación para los desarrollos de proveedor Firmware de Consulta de productos en canales OFC, LIV (Whatsapp Corporativo). El canal BEP (Portal BdB Empresas) fue retirado desde septiembre 2024. Esta transacción es la que presenta la mayor transaccionalidad en el switch antiguo",Historia,1146794,171 - Consulta de Producto,13,04/02/2025 14:21,03/03/2025 13:15
+1140055,Tribu API Canales y transaccional producto,software,171 PB - Consulta de Productos - CarProductInquiry -> getCardProduct - Pruebas de Carga,"Yo como: Cliente Banco de BogotÃ¡
+
+Quiero: Que al ingresar a la consulta de productos por el canal Banca Virtual se tengan tiempos de respuesta de menos de 5 segundos en 1000 hilos de ejecución.
+
+Para: Que no se presenten inconvenientes de tiempos de respuesta altos o indisponibilidad de la transacción
+
+
+
+FOCO: Realizar pruebas de carga dela transacción",Historia No Funcional ( Habilitadora),1146794,171 - Consulta de Producto,2,04/02/2025 14:02,18/02/2025 00:00
+1139940,Tribu API Canales y transaccional producto,software,171 SMP - Consulta de Productos - CarProductInquiry -> getCardProduct - Pruebas de carga,"Yo como: Cliente Banco de BogotÃ¡
+
+Quiero: Que al ingresar a la consulta de productos por el canal Banca Móvil se tengan tiempos de respuesta de menos de 5 segundos en 1000 hilos de ejecución.
+
+Para: Que no se presenten inconvenientes de tiempos de respuesta altos o indisponibilidad de la transacción
+
+
+
+FOCO: Realizar pruebas de carga dela transacción",Historia No Funcional ( Habilitadora),1146794,171 - Consulta de Producto,2,04/02/2025 12:15,17/02/2025 23:59
+1139836,Tribu API Canales y transaccional producto,software,171 - Consulta de Productos Front Parte 1,"Yo como: Cliente Banco de BogotÃ¡
+
+Quiero: Visualizar mis tarjetas dÃ©bito y crÃ©dito en los distintos canales (PB, SMP, IVR, OFC, AGV, LIV, BEP)
+
+Para: Revisar el estado de mis productos en los distintos canales y acceder al mismo
+
+Incrementar la cantidad de transacciones migradas a Capa teniendo en cuenta que esta es la que presenta la mayor transaccionalidad de todas
+
+
+
+FOCO: Certificar desarrollos de proveedor Firmware de Consulta de productos en canales PB, SMP, IVR. Canal AGV no aplica pues no se consume desde bus",Historia,1146794,171 - Consulta de Producto,8,04/02/2025 11:33,27/02/2025 17:37
+1139297,Tribu API Canales y transaccional producto,software,Realizar sincronización con Switch Autra,Dado que se tiene un modelo de convivencia con el switch Autra cuando se realice un cambio de clave desde el canal ATM entonces se debe realizar proceso de sincronización con el switch anterior para que la clave quede igual tanto en Capa como en Autra.  ,Criterio de aceptación,1138738,TX 148 - Migración de Transacción de Cambio de Clave de Tarjeta DÃ©bito desde cajero automÃ¡tico V2,,04/02/2025 09:20,

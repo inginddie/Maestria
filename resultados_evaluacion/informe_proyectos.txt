@@ -1,0 +1,22 @@
+Nombre del proyecto: Tribu API Canales y transaccional producto
+Total de historias de usuario: 4
+Total de historias no funcionales (habilitadoras): 6
+Promedio de evaluación de historias de usuario: 69.38
+Promedio de evaluación de historias no funcionales (habilitadoras): 90.14
+Promedio de evaluación total: 81.83
+Análisis LLM temas positivos: El proyecto destaca en uso de Gherkin y coherencia en criterios de aceptación y criterios de aceptación SMART.
+Análisis LLM temas por mejorar: Se recomienda usar la plantilla estándar adecuadamente y mejorar la segmentación según INVEST.
+
+---------------------------------------------------------
+
+Nombre del proyecto: Capa de Integración V2
+Total de historias de usuario: 12
+Total de historias no funcionales (habilitadoras): 6
+Promedio de evaluación de historias de usuario: 92.75
+Promedio de evaluación de historias no funcionales (habilitadoras): 81.39
+Promedio de evaluación total: 88.96
+Análisis LLM temas positivos: El proyecto destaca en uso de Gherkin y coherencia en criterios de aceptación y criterios de aceptación SMART.
+Análisis LLM temas por mejorar: Se recomienda usar la plantilla estándar adecuadamente y mejorar los títulos para que sean más descriptivos.
+
+---------------------------------------------------------
+
