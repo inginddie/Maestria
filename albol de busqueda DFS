@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Fondo -->
+  <rect width="800" height="600" fill="#f8f9fa" />
+  
+  <!-- Título -->
+  <text x="400" y="30" font-family="Arial" font-size="22" text-anchor="middle" font-weight="bold">Grafo del Problema de las Jarras de Agua</text>
+  
+  <!-- Nodos principales del grafo (coordenadas aproximadas) -->
+  <!-- Estado inicial (0,0) -->
+  <circle cx="400" cy="100" r="30" fill="#b2d8ff" stroke="#2e86de" stroke-width="2" />
+  <text x="400" y="105" font-family="Arial" font-size="16" text-anchor="middle">(0,0)</text>
+  
+  <!-- Nivel 1 -->
+  <circle cx="250" cy="180" r="30" fill="#b2d8ff" stroke="#2e86de" stroke-width="2" />
+  <text x="250" y="185" font-family="Arial" font-size="16" text-anchor="middle">(3,0)</text>
+  
+  <circle cx="550" cy="180" r="30" fill="#b2d8ff" stroke="#2e86de" stroke-width="2" />
+  <text x="550" y="185" font-family="Arial" font-size="16" text-anchor="middle">(0,5)</text>
+  
+  <!-- Nivel 2 -->
+  <circle cx="150" cy="280" r="30" fill="#b2d8ff" stroke="#2e86de" stroke-width="2" />
+  <text x="150" y="285" font-family="Arial" font-size="16" text-anchor="middle">(0,0)</text>
+  
+  <circle cx="300" cy="280" r="30" fill="#b2d8ff" stroke="#2e86de" stroke-width="2" />
+  <text x="300" y="285" font-family="Arial" font-size="16" text-anchor="middle">(3,5)</text>
+  
+  <circle cx="500" cy="280" r="30" fill="#b2d8ff" stroke="#2e86de" stroke-width="2" />
+  <text x="500" y="285" font-family="Arial" font-size="16" text-anchor="middle">(3,5)</text>
+  
+  <circle cx="650" cy="280" r="30" fill="#b2d8ff" stroke="#2e86de" stroke-width="2" />
+  <text x="650" y="285" font-family="Arial" font-size="16" text-anchor="middle">(0,0)</text>
+  
+  <!-- Nivel 3 -->
+  <circle cx="150" cy="380" r="30" fill="#b2d8ff" stroke="#2e86de" stroke-width="2" />
+  <text x="150" y="385" font-family="Arial" font-size="16" text-anchor="middle">(3,2)</text>
+  
+  <circle cx="300" cy="380" r="30" fill="#b2d8ff" stroke="#2e86de" stroke-width="2" />
+  <text x="300" y="385" font-family="Arial" font-size="16" text-anchor="middle">(0,5)</text>
+  
+  <circle cx="500" cy="380" r="30" fill="#b2d8ff" stroke="#2e86de" stroke-width="2" />
+  <text x="500" y="385" font-family="Arial" font-size="16" text-anchor="middle">(0,5)</text>
+  
+  <circle cx="650" cy="380" r="30" fill="#b2d8ff" stroke="#2e86de" stroke-width="2" />
+  <text x="650" y="385" font-family="Arial" font-size="16" text-anchor="middle">(3,2)</text>
+  
+  <!-- Nodo objetivo (1,3) -->
+  <circle cx="400" cy="480" r="30" fill="#adffb2" stroke="#0be881" stroke-width="3" />
+  <text x="400" y="485" font-family="Arial" font-size="16" text-anchor="middle">(1,3)</text>
+  <text x="400" y="520" font-family="Arial" font-size="14" text-anchor="middle" fill="#0be881" font-weight="bold">Meta: 1+3=4 litros</text>
+  
+  <!-- Conexiones entre nodos -->
+  <!-- Desde inicial -->
+  <line x1="392" y1="125" x2="258" y2="160" stroke="#2e86de" stroke-width="2" />
+  <text x="300" y="145" font-family="Arial" font-size="12" fill="#2e86de">Llenar 3L</text>
+  
+  <line x1="408" y1="125" x2="542" y2="160" stroke="#2e86de" stroke-width="2" />
+  <text x="500" y="145" font-family="Arial" font-size="12" fill="#2e86de">Llenar 5L</text>
+  
+  <!-- Desde (3,0) -->
+  <line x1="242" y1="205" x2="158" y2="260" stroke="#2e86de" stroke-width="2" />
+  <text x="180" y="235" font-family="Arial" font-size="12" fill="#2e86de">Vaciar 3L</text>
+  
+  <line x1="258" y1="205" x2="292" y2="260" stroke="#2e86de" stroke-width="2" />
+  <text x="285" y="235" font-family="Arial" font-size="12" fill="#2e86de">Llenar 5L</text>
+  
+  <!-- Desde (0,5) -->
+  <line x1="542" y1="205" x2="508" y2="260" stroke="#2e86de" stroke-width="2" />
+  <text x="515" y="235" font-family="Arial" font-size="12" fill="#2e86de">Llenar 3L</text>
+  
+  <line x1="558" y1="205" x2="642" y2="260" stroke="#2e86de" stroke-width="2" />
+  <text x="620" y="235" font-family="Arial" font-size="12" fill="#2e86de">Vaciar 5L</text>
+  
+  <!-- Continuar con más conexiones -->
+  <line x1="150" y1="310" x2="150" y2="350" stroke="#2e86de" stroke-width="2" />
+  <text x="115" y="330" font-family="Arial" font-size="12" fill="#2e86de">Trasvasar</text>
+  
+  <line x1="650" y1="310" x2="650" y2="350" stroke="#2e86de" stroke-width="2" />
+  <text x="685" y="330" font-family="Arial" font-size="12" fill="#2e86de">Trasvasar</text>
+  
+  <!-- Conexiones al nodo objetivo -->
+  <line x1="160" y1="406" x2="380" y2="465" stroke="#0be881" stroke-width="3" />
+  <text x="250" y="448" font-family="Arial" font-size="12" fill="#0be881" font-weight="bold">Trasvasar 2L</text>
+  
+  <line x1="640" y1="406" x2="420" y2="465" stroke="#0be881" stroke-width="3" />
+  <text x="550" y="448" font-family="Arial" font-size="12" fill="#0be881" font-weight="bold">Trasvasar 2L</text>
+  
+  <!-- Leyenda -->
+  <rect x="150" y="540" width="500" height="40" rx="5" ry="5" fill="#e9ecef" />
+  <circle cx="200" cy="560" r="10" fill="#b2d8ff" stroke="#2e86de" stroke-width="1.5" />
+  <text x="225" y="565" font-family="Arial" font-size="14" text-anchor="start">Estado normal (Jarra 3L, Jarra 5L)</text>
+  
+  <circle cx="450" cy="560" r="10" fill="#adffb2" stroke="#0be881" stroke-width="1.5" />
+  <text x="475" y="565" font-family="Arial" font-size="14" text-anchor="start">Estado objetivo</text>
+</svg>
