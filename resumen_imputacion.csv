@@ -1,0 +1,3 @@
+Columna,Tipo,Valores_Faltantes,Porcentaje_Faltantes,Estrategia,Valor_Imputación
+Saving accounts,Categórica,183,18.3,Moda (valor más frecuente),little
+Checking account,Categórica,394,39.4,Moda (valor más frecuente),little
