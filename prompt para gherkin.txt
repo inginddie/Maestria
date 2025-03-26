@@ -70,7 +70,7 @@ al final deberá colocar el resultado del ponderado de los criterios evaluados e
 
 
 Paso 5.
-debes generar una ultima colulma con la suma de los % del resultado de cada item del checklist, ejemplo:
+debes generar una ultima colulmna con la suma de los % del resultado de cada item del checklist, ejemplo:
 
 j.📌 10% | Título descriptivo: El título refleja claramente el objetivo o funcionalidad.
 k. 📌 10% | Claridad y consistencia en la descripción: La historia es clara, concisa y fácil de entender.
