@@ -1,6 +1,12 @@
 # Environment files
 .env
-.env.*
+.env.local
+.env.production
+.env.development
+.env.test
+
+# Allow .env.example files
+!.env.example
 
 # Virtual environment
 .venv/
