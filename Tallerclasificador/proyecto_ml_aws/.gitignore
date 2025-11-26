@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Modelos entrenados (son pesados)
+modelos/*.h5
+modelos/*.keras
+modelos/*.pb
+modelos/*.pt
+modelos/*.pth
+modelos/*.ckpt
+
+# Datos (no subir al repositorio)
+datos/
+*.csv
+*.xlsx
+*.json
+
+# AWS credentials
+.aws/
+credentials
+config
+
+# Environment variables
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+temp/

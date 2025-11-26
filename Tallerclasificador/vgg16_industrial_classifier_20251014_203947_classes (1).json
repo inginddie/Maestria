@@ -1,0 +1,26 @@
+{
+    "class_to_idx": {
+        "adapter_plate_triangular": 0,
+        "bracket_big": 1,
+        "clamp_small": 2,
+        "engine_part_cooler_round": 3,
+        "engine_part_cooler_square": 4,
+        "injection_pump": 5,
+        "screw": 6,
+        "star": 7,
+        "tee_connector": 8,
+        "thread": 9
+    },
+    "idx_to_class": {
+        "0": "adapter_plate_triangular",
+        "1": "bracket_big",
+        "2": "clamp_small",
+        "3": "engine_part_cooler_round",
+        "4": "engine_part_cooler_square",
+        "5": "injection_pump",
+        "6": "screw",
+        "7": "star",
+        "8": "tee_connector",
+        "9": "thread"
+    }
+}

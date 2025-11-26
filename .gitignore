@@ -11,3 +11,14 @@
 # Virtual environment
 .venv/
 venv/
+
+# Data folder
+Datos/
+
+# Large model and data files
+*.keras
+*.h5
+*.tar.gz
+*.zip
+*.pkl
+__pycache__/

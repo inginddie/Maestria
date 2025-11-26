@@ -1,0 +1,71 @@
+{
+    "model_info": {
+        "name": "vgg16_industrial_classifier_20251014_203947",
+        "timestamp": "20251014_203947",
+        "architecture": "VGG16 Transfer Learning",
+        "framework": "TensorFlow 2.19.0",
+        "gpu": "NVIDIA A100-SXM4-40GB"
+    },
+    "dataset": {
+        "train_samples": 69999,
+        "val_samples": 9999,
+        "test_samples": 19999,
+        "total": 99997,
+        "classes": [
+            "adapter_plate_triangular",
+            "bracket_big",
+            "clamp_small",
+            "engine_part_cooler_round",
+            "engine_part_cooler_square",
+            "injection_pump",
+            "screw",
+            "star",
+            "tee_connector",
+            "thread"
+        ],
+        "num_classes": 10
+    },
+    "training": {
+        "batch_size": 256,
+        "epochs": 15,
+        "learning_rate": 0.0001,
+        "optimizer": "Adam",
+        "early_stopping_patience": 3,
+        "data_augmentation": false
+    },
+    "performance": {
+        "train": {
+            "initial": 0.1779,
+            "final": 0.8036,
+            "best": 0.8036,
+            "improvement": 0.6257
+        },
+        "validation": {
+            "initial": 0.4833,
+            "final": 0.8571,
+            "best": 0.8571,
+            "best_epoch": 15,
+            "improvement": 0.3737
+        },
+        "test": {
+            "accuracy": 0.8528,
+            "loss": 0.4481,
+            "correct": 17056,
+            "incorrect": 2943,
+            "total": 19999
+        }
+    },
+    "architecture": {
+        "total_params": 15111242,
+        "trainable_params": 396554,
+        "frozen_params": 14714688,
+        "trainable_percentage": 2.6
+    },
+    "analysis": {
+        "gap_train_val": -0.0535,
+        "gap_val_test": 0.0042,
+        "overfitting": "No",
+        "generalization": "Excellent",
+        "production_ready": true
+    }
+}
